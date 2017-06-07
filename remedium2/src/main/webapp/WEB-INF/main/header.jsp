@@ -1,8 +1,7 @@
-<%-- <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <%@ page import="com.kh.remedium.util.*" %> 
 
 
-<%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
@@ -10,7 +9,7 @@
 <head>
 	<meta charset="UTF-8"> 
 	<title></title>
-	<link href="css/header.css" rel="stylesheet" style="text/css">
+	<link href="/remedium/resources/css/header.css" rel="stylesheet" style="text/css">
 	
 	<style type="text/css">
 		a{
@@ -27,32 +26,34 @@
 	<div id="navi">
 
 
-	
-	<s:if test="${session.memberId != null}"> <!-- 아이디가 null이 아닌 경우 -->
+	<c:choose>
+	<c:when test="${session.memberId != null}"> <!-- 아이디가 null이 아닌 경우 -->
 	
 	<a href="myPageMain.action" style="color: white;">마이페이지</a>
 	&nbsp;
 	<a href="logout.action" style="color: white;">로그아웃</a>
 	&nbsp;
 	<br/>
-	<s:property value="session.memberName" />님 로그인 하셨습니다.
+	${session.memberName} 로그인 하셨습니다.
 	<br/>
-	Cash point: <s:property value="session.cash" />
-	</s:if>
-	<s:else>
+	Cash point: ${session.cash}
+	</c:when>
+	<c:otherwise>
 	<a href="joinForm.action" style="color: white;">회원가입</a>
 	&nbsp;
 	<a href="loginForm.action" style="color: white;">로그인</a>
 	&nbsp;
-	</s:else>
+	</c:otherwise>
+	</c:choose>
 	</div>
 
 <div id="logo">
-<img alt="호텔로고" src="/remedium/image/logo2.png" width="200" height="100" onclick="location.href='/remedium/main.action'" >
+<img alt="호텔로고" src="/remedium/resources/image/logo2.png" width="200" height="100" onclick="location.href='/remedium/main.action'" >
 
 
 </div>
-<s:if test="${session.memberId != null}">
+<c:choose>
+<c:when test="${session.memberId != null}">
 <div id="menu" style="padding-left: 275px;">
 	<a href="info.action" style="color: white;">Remedium</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -65,8 +66,8 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="boardList.action" style="color: white;">QnA</a>
 </div>
-</s:if>
-<s:else>
+</c:when>
+<c:otherwise>
 <div id="menu">
 	<a href="info.action" style="color: white;">Remedium</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -79,7 +80,8 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="boardList.action" style="color: white;">QnA</a>
 </div>
-</s:else>
+</c:otherwise>
+</c:choose>
 <form action="roomList.action" method="post" enctype="multipart/formdata" onsubmit="return ReservationCH(this);">
 <div id="res">
 <c:set var="cDate" value="<%=new ProjectUtil()%>"/> 
@@ -91,19 +93,21 @@
 
 고객 수:
 <select name="people" class="h">
-<option value="9" <s:if test="${session.people==9}">selected="selected"</s:if> >인원수 무관</option>
-<option value="1" <s:if test="${session.people==1}">selected="selected"</s:if> >1명</option>
-<option value="2" <s:if test="${session.people==2}">selected="selected"</s:if> >2명</option>
-<option value="3" <s:if test="${session.people==3}">selected="selected"</s:if> >3명</option>
-<option value="4" <s:if test="${session.people==4}">selected="selected"</s:if> >4명</option>
-<option value="0" <s:if test="${session.people==0}">selected="selected"</s:if> >단체(5인 이상)</option>
+<option value="9" <c:if test="${session.people==9}">selected="selected"</c:if> >인원수 무관</option>
+<option value="1" <c:if test="${session.people==1}">selected="selected"</c:if> >1명</option>
+<option value="2" <c:if test="${session.people==2}">selected="selected"</c:if> >2명</option>
+<option value="3" <c:if test="${session.people==3}">selected="selected"</c:if> >3명</option>
+<option value="4" <c:if test="${session.people==4}">selected="selected"</c:if> >4명</option>
+<option value="0" <c:if test="${session.people==0}">selected="selected"</c:if> >단체(5인 이상)</option>
 </select>
 
 Room Class:
 <select name="rcType" class="h">
-<option value="0" <s:if test="${session.rcType==0 && session.rcType==null}">selected="selected"</s:if>>전체</option>
+<option value="0" <c:if test="${session.rcType==0 && session.rcType==null}">selected="selected"</c:if>>전체</option>
 
-<s:iterator value="%{session.RClist}">
+<!-- 이건 룸클래스 필요해서 주석함 -->
+
+<%-- <s:iterator value="%{session.RClist}">
 
 <option value='<s:property value="room_class"/>' 
 <s:if test="${session.rcType==room_class}"> 
@@ -112,7 +116,7 @@ Room Class:
 >
   <s:property value="name"/></option>
 
-</s:iterator>
+</s:iterator> --%>
 
 </select>
 
@@ -120,9 +124,9 @@ Room Class:
 
 
 <input type="submit" value="검색">
-<s:if test="${ session.userAdmin == '1' }"> <!-- 아이디가 관리자 아이디일 경우 -->
+<c:if test="${ session.userAdmin == '1' }"> <!-- 아이디가 관리자 아이디일 경우 -->
 <input type="button" value="전체" name="search" onclick="location.href='roomAllList.action'">
-</s:if>
+</c:if>
 
 
 </div>
@@ -172,4 +176,4 @@ function ReservationCH(userinput){
 }
 </script>
 
-</html> --%>
+</html>
