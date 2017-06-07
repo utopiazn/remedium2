@@ -5,7 +5,7 @@
 
 <mapper namespace = "member">
 	
-	<resultMap type="memberModel" id="memberRes">
+	<resultMap type="member" id="memberRes">
 		<result property="memberID" 		column="memberID" />
 		<result property="memberPassword" 	column="memberPassword" />
 		<result property="memberName" 		column="memberName" />

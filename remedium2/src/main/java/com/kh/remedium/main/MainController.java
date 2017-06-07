@@ -68,7 +68,7 @@ public class MainController {
 	}
 	
 
-	
+/*	
 	@RequestMapping(value="/main2")
 	public ModelAndView mainForm1(){
 
@@ -79,7 +79,7 @@ public class MainController {
 		mav.setViewName("main4");
 		return mav;
 	}
-		
+		*/
 	/*
 	@RequestMapping("/alliance/partnerApple")
 	public ModelAndView partnerApple(HttpServletRequest request, @RequestParams Map<String, Object> commandMap) throws Exception {
