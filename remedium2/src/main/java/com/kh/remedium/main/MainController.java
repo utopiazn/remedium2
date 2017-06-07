@@ -12,14 +12,47 @@ public class MainController {
 	ModelAndView mav = new ModelAndView();
 	
 	
+	
+    /**
+     * <pre>
+     * 1. MethodName : main
+     * 2. ClassName  : MainController.java
+     * 3. Comment    : ë©”ì¸ í™”ë©´.
+     * 4. ì‘ì„±ì       :  ì¥ì¡°ì„±
+     * 5. ì‘ì„±ì¼       : 2017. 6.7.
+     * </pre>
+     *
+     * @param 
+     * @param 
+     * @return
+     * @throws Exception
+	*/
+	
+	
 	@RequestMapping(value="/main.do")
 	public ModelAndView mainForm(){
 
-		System.out.println("¸ŞÀÎ ÆäÀÌÁö");
+		System.out.println("ë©”ì¸ í˜ì´ì§€");
 		
 		mav.setViewName("main3");
 		return mav;
 	}
+	
+	
+	/*
+	@RequestMapping("/alliance/partnerApple")
+	public ModelAndView partnerApple(HttpServletRequest request, @RequestParams Map<String, Object> commandMap) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		
+		commandMap.put("CSL_FAQ_BRAND_CC", Const.BRAND_APPLE);
+		mv.addObject("faqList", this.faqService.selectFaqAllianceList(commandMap));
+		
+		return mv.addObject("commandMap", commandMap);
+	}
+	
+	*    <c:if test="${empty commandMap.searchKeyword }">
+	*
+	*/
 
 	
 }
