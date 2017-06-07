@@ -36,6 +36,9 @@
 			<beans:list>
 				<beans:value>/WEB-INF/tiles.xml</beans:value>
 				<beans:value>/WEB-INF/tiles2.xml</beans:value>
+				
+				<!-- <beans:value>classpath:/tiles.xml</beans:value>
+				<beans:value>classpath:/tiles2.xml</beans:value> -->
 			</beans:list>
 		</beans:property>
 		<beans:property name="preparerFactoryClass" value="org.springframework.web.servlet.view.tiles2.SpringBeanPreparerFactory"/>
