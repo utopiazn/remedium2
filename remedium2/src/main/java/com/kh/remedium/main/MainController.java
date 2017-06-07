@@ -58,6 +58,18 @@ public class MainController {
 	
 	//실험1
 	@RequestMapping(value="/main2")
+	public String mainForm(){
+
+		System.out.println("메인 페이지");
+		
+		
+		
+		return "main4";
+	}
+	
+
+	
+	@RequestMapping(value="/main2")
 	public ModelAndView mainForm1(){
 
 		System.out.println("메인 페이지");
@@ -67,8 +79,7 @@ public class MainController {
 		mav.setViewName("main4");
 		return mav;
 	}
-	
-	
+		
 	/*
 	@RequestMapping("/alliance/partnerApple")
 	public ModelAndView partnerApple(HttpServletRequest request, @RequestParams Map<String, Object> commandMap) throws Exception {
