@@ -1,16 +1,14 @@
-<%-- <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <%@ page import="com.kh.remedium.util.*" %> 
-
-
-<%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 	<meta charset="UTF-8"> 
-	<title></title>
-	<link href="css/header.css" rel="stylesheet" style="text/css">
+	
+	<link href="/remedium/resources/css/header.css" rel="stylesheet" style="text/css">
+	
 	
 	<style type="text/css">
 		a{
@@ -24,29 +22,27 @@
 
 	<div class="top">
 	
-	<div id="navi">
-
-
-	
-	<s:if test="${session.memberId != null}"> <!-- 아이디가 null이 아닌 경우 -->
-	
-	<a href="myPageMain.action" style="color: white;">마이페이지</a>
-	&nbsp;
-	<a href="logout.action" style="color: white;">로그아웃</a>
-	&nbsp;
-	<br/>
-	<s:property value="session.memberName" />님 로그인 하셨습니다.
-	<br/>
-	Cash point: <s:property value="session.cash" />
-	</s:if>
-	<s:else>
-	<a href="joinForm.action" style="color: white;">회원가입</a>
-	&nbsp;
-	<a href="loginForm.action" style="color: white;">로그인</a>
-	&nbsp;
-	</s:else>
-	</div>
-
+		<div id="navi">			
+			
+			<s:if test="${session.memberId != null}"> <!-- 아이디가 null이 아닌 경우 -->
+			
+				<a href="myPageMain.action" style="color: white;">마이페이지</a>
+				&nbsp;
+				<a href="logout.action" style="color: white;">로그아웃</a>
+				&nbsp;
+				<br/>
+				<s:property value="session.memberName" />님 로그인 하셨습니다.
+				<br/>
+				Cash point: <s:property value="session.cash" />
+				</s:if>
+				<s:else>
+				<a href="joinForm.action" style="color: white;">회원가입</a>
+				&nbsp;
+				<a href="loginForm.action" style="color: white;">로그인</a>
+				&nbsp;
+			</s:else>
+		</div>
+<%-- 
 <div id="logo">
 <img alt="호텔로고" src="/remedium/image/logo2.png" width="200" height="100" onclick="location.href='/remedium/main.action'" >
 
@@ -126,7 +122,7 @@ Room Class:
 
 
 </div>
-</form>
+</form> --%>
 </div>
 
     
