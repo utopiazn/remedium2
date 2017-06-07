@@ -8,7 +8,6 @@
 </head>
 <body>
 
-	바디
-
+	
 </body>
 </html>

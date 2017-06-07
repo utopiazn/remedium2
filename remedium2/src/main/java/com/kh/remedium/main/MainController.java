@@ -1,5 +1,10 @@
 package com.kh.remedium.main;
 
+
+import com.kh.remedium.util.*;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -30,9 +35,22 @@ public class MainController {
 	
 	
 	@RequestMapping(value="/main")
-	public ModelAndView mainForm(){
+	public ModelAndView mainForm(HttpSession session){
 
+		
+		
+		//session.getValue(arg0)
+		
 		System.out.println("메인 페이지");
+		
+		//객실소개 이름 리스트 가져오기
+		//ProjectUtil rcs = new ProjectUtil(session);		
+		//rcs.roomClassSession();
+		
+		
+		mav.addObject(session);
+		
+		//mav.addObject("memberId", null);
 		
 		mav.setViewName("main3");
 		return mav;
@@ -43,6 +61,8 @@ public class MainController {
 	public ModelAndView mainForm1(){
 
 		System.out.println("메인 페이지");
+		
+		
 		
 		mav.setViewName("main4");
 		return mav;
