@@ -48,7 +48,7 @@
 	</div>
 
 <div id="logo">
-<img alt="호텔로고" src="/remedium/resources/image/logo2.png" width="200" height="100" onclick="location.href='/remedium/main.action'" >
+<img alt="호텔로고" src="/remedium/resources/image/logo2.png" width="200" height="100" onclick="location.href='/remedium/main'" >
 
 
 </div>
