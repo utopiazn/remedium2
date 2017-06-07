@@ -48,7 +48,7 @@ public class MainController {
 		//rcs.roomClassSession();
 		
 		
-		mav.addObject(session);
+		//mav.addObject(session);
 		
 		//mav.addObject("memberId", null);
 		
