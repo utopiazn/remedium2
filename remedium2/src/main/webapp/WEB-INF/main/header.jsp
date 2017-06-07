@@ -1,8 +1,8 @@
-<%-- <%@ page contentType="text/html; charset=UTF-8"%>
-<%@ page import="com.kh.remedium.util.*" %> 
+<%@ page contentType="text/html; charset=UTF-8"%>
 
 
-<%@ taglib prefix="s" uri="/struts-tags" %>
+
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
@@ -28,7 +28,7 @@
 
 
 	
-	<s:if test="${session.memberId != null}"> <!-- 아이디가 null이 아닌 경우 -->
+	<c:if test="${session.memberId != null}"> <!-- 아이디가 null이 아닌 경우 -->
 	
 	<a href="myPageMain.action" style="color: white;">마이페이지</a>
 	&nbsp;
@@ -38,7 +38,7 @@
 	<s:property value="session.memberName" />님 로그인 하셨습니다.
 	<br/>
 	Cash point: <s:property value="session.cash" />
-	</s:if>
+	</c:if>
 	<s:else>
 	<a href="joinForm.action" style="color: white;">회원가입</a>
 	&nbsp;
@@ -82,7 +82,7 @@
 </s:else>
 <form action="roomList.action" method="post" enctype="multipart/formdata" onsubmit="return ReservationCH(this);">
 <div id="res">
-<c:set var="cDate" value="<%=new ProjectUtil()%>"/> 
+<%-- <c:set var="cDate" value="<%=new ProjectUtil()%>"/>  --%>
 <input type="hidden" name="curDate" value="${cDate.currentDate}">
 체크인:
 <input type="date" name="firstDate" value="${session.firstDate}">
@@ -172,4 +172,4 @@ function ReservationCH(userinput){
 }
 </script>
 
-</html> --%>
+</html> 
