@@ -2,13 +2,17 @@ package com.kh.remedium.service;
 
 import javax.annotation.Resource;
 
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.stereotype.Service;
+
 import com.kh.remedium.dao.LoginDao;
 import com.kh.remedium.model.MemberModel;
-import org.mybatis.spring.SqlSessionTemplate;
 
+
+@Service
 public class LoginService implements LoginDao{
 	
-	@Resource
+	@Resource(name="sqlSessionTemplate")
 	private SqlSessionTemplate sqlSessionTemplate;
 	
 	@Override
