@@ -29,12 +29,22 @@ public class MainController {
 	*/
 	
 	
-	@RequestMapping(value="/main.do")
+	@RequestMapping(value="/main")
 	public ModelAndView mainForm(){
 
 		System.out.println("메인 페이지");
 		
 		mav.setViewName("main3");
+		return mav;
+	}
+	
+	//실험1
+	@RequestMapping(value="/main2")
+	public ModelAndView mainForm1(){
+
+		System.out.println("메인 페이지");
+		
+		mav.setViewName("main4");
 		return mav;
 	}
 	
