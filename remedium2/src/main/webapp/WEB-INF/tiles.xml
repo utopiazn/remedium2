@@ -18,14 +18,16 @@
 	</definition>
 
 	
-<!-- main -->
-	<definition name="main4" extends="main3">
+ <!-- main -->
+
+<!--
+	<definition name="mainForm3" extends="main31">
 		<put-attribute name="body" value="/WEB-INF/main/body.jsp" />
 	</definition>
 	
 
 
-
+ -->
  	<!-- Main Page -->
 <!-- 	<definition name="default" template="/WEB-INF/views/layout/layout.jsp">
 		<put-attribute name="header" value="/WEB-INF/views/layout/header.jsp" />
