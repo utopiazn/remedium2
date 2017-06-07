@@ -13,8 +13,7 @@ public class LoginService implements LoginDao{
 	
 	@Override
 	public MemberModel memberLogin(MemberModel member) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.sqlSessionTemplate.selectOne("member.selectOne",member.getMemberID());
 	}
 
 	@Override
