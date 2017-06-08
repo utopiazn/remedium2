@@ -31,7 +31,9 @@ public class UploadTest {
 		ProjectUtil.UplodeFile(uploadPath, multipartFile);
 		
 		model.addAttribute("title", title);
-		model.addAttribute("fileName", multipartFile.getOriginalFilename());
+		if(!multipartFile.getOriginalFilename().isEmpty()){
+			model.addAttribute("fileName", multipartFile.getOriginalFilename());
+		}
 		return "uploadTest";
 	}
 }

@@ -271,6 +271,8 @@ public class ProjectUtil /*extends ActionSupport implements SessionAware*/{
 		}catch(Exception e){}
 	}
 	*/
+	
+	//파일업로드 설정
 	public static void UplodeFile(String uploadPath, MultipartFile multipartFile) throws IOException{
 		if(!multipartFile.isEmpty()){
 			File file = new File(uploadPath, multipartFile.getOriginalFilename());
