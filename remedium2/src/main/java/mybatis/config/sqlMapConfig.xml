@@ -16,7 +16,7 @@
 	
 	<!-- ModelMapping -->
 	<typeAliases>
- 		<typeAlias alias="membeyyyyr" type="com.kh.remedium.model.MemberModel" />
+ 		<typeAlias alias="member" type="com.kh.remedium.model.MemberModel" />
  	</typeAliases> 
 	 
 	 
