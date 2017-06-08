@@ -26,7 +26,7 @@
 	<context:component-scan base-package="com.kh.remedium" />
 	
 	
-		<beans:bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver"> 
+	<beans:bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver"> 
 		<beans:property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"/>
 		<beans:property name="order" value="1"></beans:property> 
 	</beans:bean>
@@ -41,6 +41,8 @@
 		<beans:property name="preparerFactoryClass" value="org.springframework.web.servlet.view.tiles2.SpringBeanPreparerFactory"/>
 	</beans:bean>
 	
-	
+	<beans:bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	</beans:bean>
 	
 </beans:beans>
