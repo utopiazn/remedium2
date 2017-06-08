@@ -16,7 +16,7 @@
 	
 	<!-- ModelMapping -->
 	<typeAliases>
- 		<typeAlias alias="member" type="com.kh.remedium.model.MemberModel" />
+ 		<typeAlias alias="membeyyyyr" type="com.kh.remedium.model.MemberModel" />
  	</typeAliases> 
 	 
 	 
@@ -24,4 +24,4 @@
  	<mappers>
 	    <mapper resource="mybatis/config/memberSQL.xml" />
 	</mappers> 
-</configuration>
+</configuration> 

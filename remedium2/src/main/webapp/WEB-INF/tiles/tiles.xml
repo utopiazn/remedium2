@@ -18,7 +18,9 @@
 	</definition>
 	
 	
-	
+	<definition name="loginForm" extends="main3">
+		<put-attribute name="body" value="/WEB-INF/login/loginForm.jsp" />
+	</definition>
 	
  <!-- main -->
 

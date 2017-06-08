@@ -17,7 +17,8 @@ public class LoginService implements LoginDao{
 	
 	@Override
 	public MemberModel memberLogin(MemberModel member) {
-		return this.sqlSessionTemplate.selectOne("member.selectOne",member.getMemberID());
+		
+		return this.sqlSessionTemplate.selectOne("member.selectOne",member);
 	}
 
 	@Override
@@ -31,7 +32,5 @@ public class LoginService implements LoginDao{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	
 	
 }

@@ -27,7 +27,7 @@ public class LoginController {
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public ModelAndView memberLogin(MemberModel member, HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
-		
+	
 		MemberModel result = LoginService.memberLogin(member);
 		
 		if(result!=null){
@@ -35,8 +35,10 @@ public class LoginController {
 			
 			session.setAttribute("memberId", result.getMemberID());
 			session.setAttribute("memberPasswd", result.getMemberPassword());
+			session.setAttribute("memberName", result.getMemberName());
+			session.setAttribute("cash", result.getCash());
 			
-			mav.setViewName("/main");
+			mav.setViewName("main3");
 			return mav;
 			
 		}

@@ -27,16 +27,16 @@
 
 
 	<c:choose>
-	<c:when test="${session.memberId != null}"> <!-- 아이디가 null이 아닌 경우 -->
+	<c:when test="${memberId != null}"> <!-- 아이디가 null이 아닌 경우 -->
 	
 	<a href="myPageMain.action" style="color: white;">마이페이지</a>
 	&nbsp;
 	<a href="logout.action" style="color: white;">로그아웃</a>
 	&nbsp;
 	<br/>
-	${session.memberName} 로그인 하셨습니다.
+	${memberName} 로그인 하셨습니다.
 	<br/>
-	Cash point: ${session.cash}
+	Cash point: ${cash}
 	</c:when>
 	<c:otherwise>
 	<a href="joinForm.action" style="color: white;">회원가입</a>
