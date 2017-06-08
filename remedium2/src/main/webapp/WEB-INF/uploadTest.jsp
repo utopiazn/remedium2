@@ -11,5 +11,11 @@
 		<input type="file" name="f"><br/>
 		<input type="submit" value="전송"/>
 	</form:form>
+	
+	<c:if test="${title!=null}">
+		파일이 업로드 되었음.
+		<br/>타이틀 : ${title}
+		<br/>파일이름 : ${fileName}
+	</c:if>
 </body>
 </html>

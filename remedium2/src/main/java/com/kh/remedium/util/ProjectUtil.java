@@ -10,6 +10,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
 /*import org.apache.commons.io.FileUtils;
 import org.apache.struts2.interceptor.SessionAware;
 
@@ -24,6 +28,7 @@ import bean.RoomclassBean;
 
 import com.opensymphony.xwork2.ActionSupport;
 */
+
 
 
 public class ProjectUtil /*extends ActionSupport implements SessionAware*/{
@@ -265,10 +270,13 @@ public class ProjectUtil /*extends ActionSupport implements SessionAware*/{
 		    System.out.println("이미지 정보 업데이트.");
 		}catch(Exception e){}
 	}
-	
-	
 	*/
-	
+	public static void UplodeFile(String uploadPath, MultipartFile multipartFile) throws IOException{
+		if(!multipartFile.isEmpty()){
+			File file = new File(uploadPath, multipartFile.getOriginalFilename());
+			multipartFile.transferTo(file);
+		}
+	}
 	
 	
 	
