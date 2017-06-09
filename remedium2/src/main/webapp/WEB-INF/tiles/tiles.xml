@@ -6,11 +6,16 @@
 
 <tiles-definitions>
 
-
+	<definition name="main2" template="/WEB-INF/main/main2.jsp">
+		<put-attribute name="title" value="Remedium Hotel[당신만을 위한 오리엔탈 프리미엄 에디션]" />						
+		<put-attribute name="header" value="/WEB-INF/main/header.jsp" />		
+		<put-attribute name="body" value="/WEB-INF/main/body.jsp" /> 
+		<put-attribute name="footer" value="/WEB-INF/main/footer.jsp" />	
+		
+	</definition>
 
 	<definition name="main3" template="/WEB-INF/main/main3.jsp">
-		<put-attribute name="title" value="Remedium Hotel[당신만을 위한 오리엔탈 프리미엄 에디션]" />
-							
+		<put-attribute name="title" value="Remedium Hotel[당신만을 위한 오리엔탈 프리미엄 에디션]" />						
 		<put-attribute name="header" value="/WEB-INF/main/header.jsp" />		
 		<put-attribute name="body" value="/WEB-INF/main/body.jsp" /> 
 		<put-attribute name="footer" value="/WEB-INF/main/footer.jsp" />	
@@ -18,7 +23,9 @@
 	</definition>
 	
 	
-	<definition name="loginForm" extends="main3">
+	
+	
+	<definition name="loginForm" extends="main2">
 		<put-attribute name="body" value="/WEB-INF/login/loginForm.jsp" />
 	</definition>
 	

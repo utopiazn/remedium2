@@ -31,7 +31,7 @@
 	
 	<a href="myPageMain.action" style="color: white;">마이페이지</a>
 	&nbsp;
-	<a href="logout.action" style="color: white;">로그아웃</a>
+	<a href="logout" style="color: white;">로그아웃</a>
 	&nbsp;
 	<br/>
 	${memberName} 로그인 하셨습니다.
@@ -41,7 +41,7 @@
 	<c:otherwise>
 	<a href="joinForm.action" style="color: white;">회원가입</a>
 	&nbsp;
-	<a href="loginForm.action" style="color: white;">로그인</a>
+	<a href="loginForm" style="color: white;">로그인</a>
 	&nbsp;
 	</c:otherwise>
 	</c:choose>

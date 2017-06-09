@@ -18,7 +18,7 @@ public class LoginService implements LoginDao{
 	@Override
 	public MemberModel memberLogin(MemberModel member) {
 		
-		return this.sqlSessionTemplate.selectOne("member.selectOne",member);
+		return this.sqlSessionTemplate.selectOne("member.login",member);
 	}
 
 	@Override

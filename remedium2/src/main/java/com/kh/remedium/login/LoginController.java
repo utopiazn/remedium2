@@ -44,7 +44,22 @@ public class LoginController {
 		}
 		
 		mav.setViewName("loginForm");
+		return mav;	
+	}
+	
+	@RequestMapping(value="/logout")
+	public ModelAndView memberLogOut(HttpServletRequest request, MemberModel member) {
+		ModelAndView mav = new ModelAndView();
+		
+		HttpSession session = request.getSession(false);
+		
+		if(session != null) {
+			session.invalidate();
+		}
+		
+		mav.setViewName("main3");
 		return mav;
+		
 		
 		
 	}

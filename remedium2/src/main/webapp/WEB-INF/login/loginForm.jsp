@@ -6,8 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link href="css/form.css" rel="stylesheet" style="text/css">
-<link href="css/board.css" rel="stylesheet" style="text/css">
+<link href="/remedium/resources/css/form.css" rel="stylesheet" style="text/css">
+<link href="/remedium/resources/css/board.css" rel="stylesheet" style="text/css">
 <SCRIPT type="text/javascript">
 		
 		function validation(userinput) {
@@ -28,7 +28,12 @@
 			return true;
 		}
 </SCRIPT>
+<style type="text/css">
+.loginInput{
+	width:180; maxlength:20px;
+}
 
+</style>
 </head>
 
 <body>
@@ -44,14 +49,15 @@
 		<tr>
 			<td ><font color="#FF0000">* </font>아이디</td>
 			<td bgcolor="#FFFFFF">
-				<input type="text" name="memberID" id="memberID"/>
+				<input type="text" name="memberID" />
 				<br>
 			</td>
 		</tr>
 		<tr>
 			<td><font color="#FF0000">* </font>비밀번호</td>
 			<td bgcolor="#FFFFFF">
-				<input type="password" name="memberPassword" id="memberPassword"/>
+				
+				<input type="password" name="memberPassword" class="loginInput" />
 			</td>
 			
 		</tr>

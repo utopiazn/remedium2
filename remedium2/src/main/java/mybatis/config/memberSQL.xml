@@ -38,6 +38,12 @@
 		<include refid="where-memberID" />
 	</select>
 	
+	<select id="login" resultMap="memberRes">
+		<include refid="select-all"/>
+		<include refid="where-memberID" />
+		AND memberPassword = #{memberPassword}
+	</select>
+	
 
 
 
