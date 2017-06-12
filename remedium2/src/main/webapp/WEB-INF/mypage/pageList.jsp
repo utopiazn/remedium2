@@ -76,7 +76,8 @@ text-align:right;
 </c:when>
 
 </c:choose>
-<s:if test="reslist.size() <= 0">
+
+<!-- <s:if test="reslist.size() <= 0">
 	<tr>
 		<td colspan="8" align="center">예약된 객실이 없습니다</td>
 	</tr>
@@ -84,7 +85,30 @@ text-align:right;
 		<td height="1" colspan="8"></td>
 	</tr>
 </s:if>
-<s:else>
+<s:else> -->
+
+<c:forEach items="reslist" >
+	<tr>
+		<td><s:property value="memberID"/></td>
+		<td><s:property value="reservationNo"/></td>
+		<td><s:property value="no"/></td>
+		<td><s:property value="firstDate"/></td>
+		<td><s:property value="lastDate"/></td>
+		<td>
+		
+		<c:choose>
+			<c:when test='%{people==0}'>
+			단체
+			</c:when>
+			
+			<c:when test='{people==9}'>
+			-
+			</c:when>
+		</c:choose>
+
+
+</c:forEach>
+
 <s:iterator value="reslist">
 <tr>
 <td><s:property value="memberID"/></td>
@@ -153,7 +177,7 @@ text-align:right;
 <tr bgcolor="#777777">
 	<td height="1" colspan="8"></td>
 </tr>
-</s:iterator>
+</s:iterator> --%>
 </s:else>
 <s:if test='${session.userAdmin!="1"}'>
 <tr align="right">

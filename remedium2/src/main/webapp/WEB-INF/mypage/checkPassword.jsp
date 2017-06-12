@@ -6,8 +6,8 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<!-- <link href="css/form.css" rel="stylesheet" style="text/css"> -->
-<link href="css/board.css" rel="stylesheet" style="text/css">
+
+<link href="/remedium/resources/css/board.css" rel="stylesheet" style="text/css">
 <style type="text/css">
 .pwch /* 비밀번호 확인 */
 {
@@ -48,10 +48,10 @@ function pwd(userinput) {
 
 <form action="loginDelete.action" method="post" onsubmit="return pwd(this);" enctype="multipart/form-data">
 
-<!-- <s:hidden name="no" value="%{no}"/>
+<s:hidden name="no" value="%{no}"/>
 <s:hidden name="currentPage" value="%{currentPage}"/>
 <s:hidden name="orgpasswd" value="%{resultClass.memberPassword}"/>
-<s:hidden name="memberID" value="%{resultClass.memberID}"></s:hidden> -->
+<s:hidden name="memberID" value="%{resultClass.memberID}"></s:hidden>
 
 <table width="250" border="0" cellspacing="0" cellpadding="0">
 
@@ -63,7 +63,9 @@ function pwd(userinput) {
 <td width="150" bgcolor="#F4F4F4" >비밀번호 입력</td>
 
 
-<td width="150" bgcolor="#FFFFFF" align="center"><s:textfield name="password" theme="simple" cssStyle="width:130px" maxlength="20"/>
+<td width="150" bgcolor="#FFFFFF" align="center">
+<input type="password">
+<!-- <s:textfield name="password" theme="simple" cssStyle="width:130px" maxlength="20"/> -->
 </td>
 </tr>
 
@@ -77,5 +79,5 @@ function pwd(userinput) {
 </table>
 </form>
 </div>
-</body>
+</body> 
 </html>
