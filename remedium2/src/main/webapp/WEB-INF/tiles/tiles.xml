@@ -36,6 +36,12 @@
 		<put-attribute name="body" value="/WEB-INF/join/joinForm.jsp" />
 	</definition>
 	
+		
+	<!-- 마이 페이지 폼 -->
+ 	<definition name="mypage" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/mypage/pageMain.jsp" />
+	</definition>
+	
 	
  <!-- main -->
 
