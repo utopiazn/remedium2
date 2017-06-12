@@ -48,10 +48,16 @@ function pwd(userinput) {
 
 <form action="loginDelete.action" method="post" onsubmit="return pwd(this);" enctype="multipart/form-data">
 
-<s:hidden name="no" value="%{no}"/>
+
+<input type="hidden" name="no" value="%{ no }">
+<input type="hidden" name="currentPage" value="%{ currentPage }">
+<input type="hidden" name="orgpasswd" value="%{ resultClass.memberPassword }">
+<input type="hidden" name="memberID" value="%{ resultClass.memberID }">
+
+<!-- <s:hidden name="no" value="%{no}"/>
 <s:hidden name="currentPage" value="%{currentPage}"/>
 <s:hidden name="orgpasswd" value="%{resultClass.memberPassword}"/>
-<s:hidden name="memberID" value="%{resultClass.memberID}"></s:hidden>
+<s:hidden name="memberID" value="%{resultClass.memberID}"></s:hidden> -->
 
 <table width="250" border="0" cellspacing="0" cellpadding="0">
 
@@ -73,7 +79,7 @@ function pwd(userinput) {
 <tr>
 <td align="center" height="1" colspan="2"><br>
 <input class="button" name="submit" type="submit" value="확인" class="inputb"  style="width: 75px;"/>
-<input type="button" value="취소" class="button" style="width: 75px;" onClick="javascript:location.href='myPageMain.action'">	
+<input type="button" value="취소" class="button" style="width: 75px;" onClick="javascript:location.href='myPageMain'">	
 </td>
 </tr>
 </table>

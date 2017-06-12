@@ -30,7 +30,7 @@ function open_win_noresizable(url, name) {
 			</c:when>
 		
 			<c:otherwise>
-		 		<img alt="회원정보 수정" src="/remedium/resources/image/modify.png" width="100%" height="100%"  onclick="location.href='loginModifyForm.action?memberID=${session.memberId}'" > 
+		 		<img alt="회원정보 수정" src="/remedium/resources/image/modify.png" width="100%" height="100%"  onclick="location.href='loginModifyForm?memberID=${memberId}'" > 
 			</c:otherwise>
 		
 		</c:choose> 
@@ -49,7 +49,7 @@ function open_win_noresizable(url, name) {
  	<div id="reslist">
 	 	<c:choose>
 		 	<c:when test="${userAdmin == '1' }"> <!-- 아이디가 관리자 아이디일 경우 -->
-		 		<img alt="나의 예약 페이지" src="/remedium/resources/image/reslist.png" width="100%" height="100%"  onclick="location.href='roomAdminList.action'" > 
+		 		<img alt="나의 예약 페이지" src="/remedium/resources/image/reslist.png" width="100%" height="100%"  onclick="location.href='roomAdminList'" > 
 		 	</c:when>
 		 	
 		 	<c:otherwise>
@@ -68,7 +68,7 @@ function open_win_noresizable(url, name) {
 			
 			<c:when test="${userAdmin == '1'}">
 				<div id="cash">
-			  		<img alt="객실 리스트" src="/remedium/resources/image/roomlist.png" width="100%" height="100%"  onclick="location.href='roomAllList.action'" > 
+			  		<img alt="객실 리스트" src="/remedium/resources/image/roomlist.png" width="100%" height="100%"  onclick="location.href='roomAllList'" > 
 				</div>
 			</c:when>
 		</c:choose>

@@ -54,27 +54,30 @@ text-align:right;
 	</tr>
 </table>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
-<tr><td colspan="8" class="line1" ><input class="button" type="button" value="마이페이지로 이동"onClick="location.href='myPageMain'"></td></tr>
-<tr class="top" align="center">
-<td><strong>회원 ID</strong></td>
-<td><strong>예약 번호</strong></td>
-<td><strong>객실 번호</strong></td>
-<td><strong>입실 날짜</strong></td>
-<td><strong>퇴실 날짜</strong></td>
-<td><strong>예약 인원</strong></td>
-<td><strong>예약금</strong></td>
-<td><strong>예약완료 여부</strong></td>
-</tr>
-<c:choose>
-<c:when test="reslist.size() <= 0">
 <tr>
-		<td colspan="8" align="center">예약된 객실이 없습니다</td>
+	<td colspan="8" class="line1" ><input class="button" type="button" value="마이페이지로 이동"onClick="location.href='myPageMain'">
+	</td>
+</tr>
+	<tr class="top" align="center">
+		<td><strong>회원 ID</strong></td>
+		<td><strong>예약 번호</strong></td>
+		<td><strong>객실 번호</strong></td>
+		<td><strong>입실 날짜</strong></td>
+		<td><strong>퇴실 날짜</strong></td>
+		<td><strong>예약 인원</strong></td>
+		<td><strong>예약금</strong></td>
+		<td><strong>예약완료 여부</strong></td>
 	</tr>
-	<tr bgcolor="#777777">
-		<td height="1" colspan="8"></td>
-	</tr>
-</c:when>
-
+	
+<c:choose>
+	<c:when test="reslist.size() <= 0">
+		<tr>
+			<td colspan="8" align="center">예약된 객실이 없습니다</td>
+		</tr>
+		<tr bgcolor="#777777">
+			<td height="1" colspan="8"></td>
+		</tr>
+	</c:when>
 </c:choose>
 
 <!-- <s:if test="reslist.size() <= 0">
@@ -87,29 +90,37 @@ text-align:right;
 </s:if>
 <s:else> -->
 
-<c:forEach items="reslist" >
+<c:forEach var="reslist" items="${reslist }" >
 	<tr>
-		<td><s:property value="memberID"/></td>
-		<td><s:property value="reservationNo"/></td>
-		<td><s:property value="no"/></td>
-		<td><s:property value="firstDate"/></td>
-		<td><s:property value="lastDate"/></td>
-		<td>
+		<td><c:set property="reslist" value="memberID" /></td>
+		<td><c:set property="reslist" value="reservationNo" /></td>
+		<td><c:set property="reslist" value="no" /></td>
+		<td><c:set property="reslist" value="firstDate" /></td>
+		<td><c:set property="reslist" value="lastDate" /></td>
+		<td>${ reservationNo }</td>
+		<td>${ no }</td>
+		<td>${ firstDate }</td>
+		<td>${ lastDate }</td>
 		
-		<c:choose>
-			<c:when test='%{people==0}'>
-			단체
-			</c:when>
+			<c:choose>
+				<c:when test='%{people==0}'>
+					단체
+				</c:when>
+					
+				<c:when test='%{people==9}'>
+					-
+				</c:when>
+				
+				<c:otherwise>
+				
+				</c:otherwise>
+			</c:choose>
 			
-			<c:when test='{people==9}'>
-			-
-			</c:when>
-		</c:choose>
-
-
+	</tr>		
+			
 </c:forEach>
 
-<s:iterator value="reslist">
+<%-- <s:iterator value="reslist">
 <tr>
 <td><s:property value="memberID"/></td>
 <td><s:property value="reservationNo"/></td>
@@ -177,7 +188,7 @@ text-align:right;
 <tr bgcolor="#777777">
 	<td height="1" colspan="8"></td>
 </tr>
-</s:iterator> --%>
+</s:iterator>
 </s:else>
 <s:if test='${session.userAdmin!="1"}'>
 <tr align="right">
@@ -188,6 +199,6 @@ text-align:right;
 	<td colspan="8"><s:property value="pagingHtml" escape="false"/></td>
 </tr>
 </table>
-</div>
+</div> --%>
 </body>
 </html>
