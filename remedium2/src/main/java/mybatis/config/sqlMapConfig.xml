@@ -17,6 +17,7 @@
 	<!-- ModelMapping -->
 	<typeAliases>
  		<typeAlias alias="member" type="com.kh.remedium.model.MemberModel" />
+ 		<typeAlias alias="facilities" type="com.kh.remedium.facilities.Facilities" />
  	</typeAliases> 
 	 
 	 
