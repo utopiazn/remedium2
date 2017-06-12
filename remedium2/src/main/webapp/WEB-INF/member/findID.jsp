@@ -14,12 +14,13 @@ margin: 1% auto;
 width: 41%;
 }
 </style>
-<link href="css/board.css" rel="stylesheet" style="text/css">
+<link href="/remedium/resources/css/form.css" rel="stylesheet" style="text/css">
+<link href="/remedium/resources/css/board.css" rel="stylesheet" style="text/css">
 </head>
 <SCRIPT type="text/javascript">
-	function validation() {
+	function validation(frm) {
 
-		var frm = document.forms(0);
+		/* var frm = document.forms(0); */
 
 		if (frm.memberName.value == "") {
 			alert("이름을 입력해 주세요.");
@@ -34,7 +35,12 @@ width: 41%;
 		return true;
 	}
 </SCRIPT>
+<!-- <style type="text/css">
+.findIdInput{
+	cssStyle="width:170px"
+}
 
+</style> -->
 <body>
 
 <div class="id">
@@ -49,24 +55,24 @@ width: 41%;
 			<!-- </td> -->
 		</tr>
 	</table>
-	<form action="findIDAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
+	<form action="findId" method="post" enctype="multipart/form-data" onsubmit="return validation(this);">
 		<center>
 		<table width="300">
 		
 			<tr>
 				<td bgcolor="#F4F4F4"><font color="#FF0000">*</font> 이 름</td>
-				<td bgcolor="#FFFFFF"><s:textfield name="memberName" theme="simple" cssStyle="width:170px" maxlength="20"/></td>
+				<td bgcolor="#FFFFFF"><input type="text" name="memberName" Style="width:170px" maxlength="20"/></td>
 			</tr>
 			
 			<tr>
 				<td bgcolor="#F4F4F4"><font color="#FF0000">*</font> 생년 월일</td>
-				<td bgcolor="#FFFFFF"><s:textfield name="birthday" theme="simple" cssStyle="width:170px" maxlength="20" /></td>
+				<td bgcolor="#FFFFFF"><input type="text" name="birthday" Style="width:170px" maxlength="20"/></td>
 			</tr>
 		</table> 
 		</center>
 		<br/>
-		<input class="button" name="submit" type="submit" value="찾기" class="inputb" style="width: 130px;">&nbsp;
-		<button class="button" type="button" onclick="location.href='main.action' " style="width: 130px;">취소</button>
+		<input class="button" name="submit" type="submit" value="찾기" class="inputb" style="width: 140px;">&nbsp;
+		<button class="button" type="button" onclick="location.href='main'" style="width: 140px;">취소</button>
 	</form>
 	</div>
 </body>

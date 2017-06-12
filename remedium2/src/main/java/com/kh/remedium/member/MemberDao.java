@@ -1,8 +1,6 @@
-package com.kh.remedium.dao;
+package com.kh.remedium.member;
 
-import com.kh.remedium.model.MemberModel;
-
-public interface LoginDao {
+public interface MemberDao {
 	
 	public MemberModel memberLogin(MemberModel member);
 	
@@ -13,5 +11,7 @@ public interface LoginDao {
 	public void memberDelete(String memberId); 
 	
 	public Object findId(MemberModel member);
+	
+	public Object findPw(MemberModel member);
 	
 }

@@ -1,4 +1,4 @@
-package com.kh.remedium.login;
+package com.kh.remedium.member;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -9,11 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.kh.remedium.model.MemberModel;
-import com.kh.remedium.service.LoginService;
-
 @Controller
-public class LoginController {
+public class MemberController {
 	
 	
 	 /**
@@ -31,22 +28,50 @@ public class LoginController {
      * @throws Exception
 	*/
 	
+	 /**
+     * <pre>
+     * 1. MethodName : mainForm
+     * 2. ClassName  : JoinController.java
+     * 3. Comment    : 회원 가입 폼.
+     * 4. 작성자       :  장조성
+     * 5. 작성일       : 2017. 6.12.
+     * </pre>
+     *
+     * @param 
+     * @param 
+     * @return
+     * @throws Exception
+	*/
+	
 	ModelAndView mav = new ModelAndView();
 	
 	@Resource
-	private LoginService LoginService;
+	private MemberService memberService;
 	
+	//회원 가입 폼
+	@RequestMapping(value="/joinForm")
+	public ModelAndView mainForm(HttpSession session){
+		
+		System.out.println("회원가입폼");
+
+		mav.setViewName("joinForm");
+
+		return mav;
+	}
+	
+	// 로그인 폼
 	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public ModelAndView memberLogin() {
 		mav.setViewName("loginForm");
 		return mav;
 	}
 	
+	// 로그인 처리
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public ModelAndView memberLogin(MemberModel member, HttpServletRequest request) {
 		
 	
-		MemberModel result = LoginService.memberLogin(member);
+		MemberModel result = memberService.memberLogin(member);
 		
 		if(result!=null){
 			HttpSession session  = request.getSession();
@@ -66,6 +91,8 @@ public class LoginController {
 		return mav;	
 	}
 	
+	
+	// 로그아웃
 	@RequestMapping(value="/logout")
 	public ModelAndView memberLogOut(HttpServletRequest request, MemberModel member) {
 		ModelAndView mav = new ModelAndView();
@@ -81,13 +108,14 @@ public class LoginController {
 			
 	}
 	
+	// 회원 수정 폼
 	@RequestMapping(value="/modify", method=RequestMethod.GET)
 	public ModelAndView memberModify(HttpSession session){
 		
 		if(session != null) {
 			String memberId = session.getAttribute("memberId").toString();
 			
-			MemberModel member = LoginService.selectOne(memberId);
+			MemberModel member = memberService.selectOne(memberId);
 			mav.addObject("member", member);
 			mav.setViewName("modifyForm");
 			return mav;
@@ -96,6 +124,7 @@ public class LoginController {
 		return mav;
 	}
 	
+	// 회원 수정 처리
 	@RequestMapping(value="/modify", method=RequestMethod.POST)
 	public ModelAndView memberModify(MemberModel member, HttpServletRequest request){
 		System.out.println("1111111");
@@ -118,13 +147,15 @@ public class LoginController {
 			member.setAddr2(member.getAddr22());
 		}
 		
-		LoginService.memberModify(member);
+		memberService.memberModify(member);
 		mav.setViewName("redirect:/main");
 		
 		return mav;
 	
 	}
 	
+	
+	//회원 탈퇴
 	@RequestMapping(value="/delete")
 	public ModelAndView memberDelete(MemberModel member, HttpServletRequest request) {
 		HttpSession session = request.getSession(false);
@@ -133,7 +164,7 @@ public class LoginController {
 		if(session != null){
 			String memberId = session.getAttribute("memberId").toString();
 			
-			LoginService.memberDelete(memberId);
+			memberService.memberDelete(memberId);
 			session.invalidate();
 			mav.setViewName("redirect:/main");
 			return mav;
@@ -144,26 +175,57 @@ public class LoginController {
 		return mav;	
 	}
 	
+	// 아이디 찾기 폼
 	@RequestMapping(value="/findId", method=RequestMethod.GET)
 	public ModelAndView findId() {
 		
 		mav.setViewName("findIdForm");
 		return mav;
 	}
-		
+	
+	
+	// 아이디 찾기 처리
 	@RequestMapping(value="/findId", method=RequestMethod.POST)
 	public ModelAndView findId(MemberModel member, HttpServletRequest request){
 		
-			String memberID = LoginService.findId(member);
+			String memberID = memberService.findId(member);
 			
 			if(memberID != null){
 				mav.addObject("memberID", memberID);
 				mav.setViewName("findIdSuccess");
 				return mav;
 			}
+			
 			mav.setViewName("findError");
 			return mav;
 		
 	}
+	
+	// 비밀번호 찾기 폼
+	@RequestMapping(value="/findPw", method=RequestMethod.GET)
+	public ModelAndView findPw() {
+		
+		mav.setViewName("findPwForm");
+		return mav;
+	}
+	
+	// 비밀번호 찾기 처리
+	@RequestMapping(value="/findPw", method=RequestMethod.POST)
+	public ModelAndView findPw(MemberModel member, HttpServletRequest request){
+		
+			String memberPw = memberService.findPw(member);
+			
+			if(memberPw != null){
+				mav.addObject("memberPw", memberPw);
+				mav.setViewName("findPwSuccess");
+				return mav;
+			}
+			
+			mav.setViewName("findError");
+			return mav;
+		
+	}
+	
+	
 	
 }

@@ -1,4 +1,4 @@
-package com.kh.remedium.model;
+package com.kh.remedium.member;
 
 import java.util.Date;
 

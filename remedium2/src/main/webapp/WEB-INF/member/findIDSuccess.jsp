@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>¾ÆÀÌµğ Ã£±â</title>
+<title>ì•„ì´ë”” ì°¾ê¸°</title>
 <style type="text/css">
 a{
 color: black;
@@ -39,7 +39,7 @@ color: black;
 <div class="event">
 <table width="850" border="0" cellspacing="0" cellpadding="0" align="center">
   	<tr>
-  			<td align="center" ><h2>¾ÆÀÌµğ Ã£±â °á°ú</h2>
+  			<td align="center" ><h2>ì•„ì´ë”” ì°¾ê¸° ê²°ê³¼</h2>
   			<hr align="center" width="50%" size="1" color="gray">
   			<br/>
   			</td>
@@ -51,14 +51,14 @@ color: black;
     <tr>
 
         <tr >
-          <td align="center">¾ÆÀÌµğ´Â &nbsp; [ ${resultClass.memberID} ] &nbsp; ÀÔ´Ï´Ù.
+          <td align="center">ì•„ì´ë””ëŠ” &nbsp; [ ${memberID} ] &nbsp; ì…ë‹ˆë‹¤.
         </tr>
 		
         <tr>
         <td align="center">
-          <a href="loginForm.action"><font size=2><b>·Î±×ÀÎ</b></font></a>&nbsp;/ 
-          <a href="findPwForm.action"><font size=2><b>ºñ¹Ğ¹øÈ£Ã£±â</b></font></a>&nbsp;/ 
-          <a href="main.action"><font size=2><b>¸ŞÀÎÀ¸·Î</b></font></a>
+          <a href="login"><font size=2><b>ë¡œê·¸ì¸</b></font></a>&nbsp;/ 
+          <a href="findPw"><font size=2><b>ë¹„ë°€ë²ˆí˜¸ì°¾ê¸°</b></font></a>&nbsp;/ 
+          <a href="main"><font size=2><b>ë©”ì¸ìœ¼ë¡œ</b></font></a>
         </td>
       </tr>
 

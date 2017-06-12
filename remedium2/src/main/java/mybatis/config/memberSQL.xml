@@ -44,8 +44,14 @@
 		AND memberPassword = #{memberPassword}
 	</select>
 	
-	<select id="FindId" resultType="String" parameterType="memberRes" >
+	<select id="findId" resultType="String" parameterType="member" >
 		select memberID from member where memberName = #{memberName} AND birthday = #{birthday}
+	</select>
+	
+	<select id="findPw" resultType="String" parameterType="member" >
+		select memberPassword from member
+		<include refid="where-memberID" />
+		AND memberName = #{memberName} AND birthday = #{birthday}
 	</select>
 	
 	<update id="modify" parameterType="member">
