@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="join">
+
+
+
+	<insert id="insert" parameterType="hashmap">
+		<![CDATA[
+			
+			
+		INSERT INTO MEMBER 
+			(MEMBERID, MEMBERPASSWORD, MEMBERNAME, GENDER, BIRTHDAY, PHONE, EMAIL, 
+				REGDATE, USERADMIN, ZIPCODE, ADDR1, ADDR2, CASH, USERCHECK) 
+		VALUES (
+			#{memberID}, 
+			#{memberPassword}, 
+			#{memberName}, 
+			#{gender}, 
+			#{birthday},
+			#{phone}, 
+			#{email}, 
+			sysdate, 
+			#{userAdmin}, 
+			#{zipcode}, 
+			#{addr1}, 
+			#{addr2},0, 0 )
+		]]>
+	</insert>
+
+</mapper>

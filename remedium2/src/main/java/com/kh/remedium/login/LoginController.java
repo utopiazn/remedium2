@@ -107,20 +107,8 @@ public class LoginController {
 			return mav;	
 		}
 		
-		if(!member.getZipcode1().equals("")){
-			member.setZipcode(member.getZipcode1());
-		}
-		
-		if(!member.getAddr11().equals("")){
-			member.setAddr1(member.getAddr11());
-		}
-		
-		if(!member.getAddr22().equals("")){
-			member.setAddr2(member.getAddr22());
-		}
-		
 		LoginService.memberModify(member);
-		mav.setViewName("redirect:/main");
+		mav.setViewName("redirect:/main3");
 		
 		return mav;
 	
