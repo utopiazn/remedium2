@@ -18,6 +18,7 @@ public class MemberModel {
 	private String zipcode; // 회원 우편번호
 	private String addr1; // 회원 주소
 	private String addr2; // 회원 상세주소
+	private String zipcode1; // 회원 우편번호
 	private String addr11;
 	private String addr22;
 	
@@ -114,6 +115,26 @@ public class MemberModel {
 	public void setUserCheck(int userCheck) {
 		this.userCheck = userCheck;
 	}
+	public String getAddr11() {
+		return addr11;
+	}
+	public void setAddr11(String addr11) {
+		this.addr11 = addr11;
+	}
+	public String getAddr22() {
+		return addr22;
+	}
+	public void setAddr22(String addr22) {
+		this.addr22 = addr22;
+	}
+	public String getZipcode1() {
+		return zipcode1;
+	}
+	public void setZipcode1(String zipcode1) {
+		this.zipcode1 = zipcode1;
+	}
+	
+	
 	
 	
 	

@@ -74,15 +74,20 @@
 
 <br>
 
-<form action="modify"  method="post" enctype="multipart/form-data" onsubmit="return validation2(this);">
+
+
+
+
+<form action="modify"  method="post" onsubmit="return validation2(this);">
 	<input type="hidden" name="memberID" value="${member.memberID }"/>
-	<input type="hidden" name="regdate" value="${member.regdate}" />
+	<!-- <input type="hidden" name="regdate" value="2017/02/01" />  -->
 	<input type="hidden" name="zipcode" value="${member.zipcode}" />
 	<input type="hidden" name="addr1" value="${member.addr1}" />
 	<input type="hidden" name="addr2" value="${member.addr2}" />
 	<input type="hidden" name="memberName" value="${member.memberName}" />
 	<input type="hidden" name="gender" value="${member.gender}" />
-	
+	 
+	 
 	
 
 <table width="550" border="0" cellspacing="0" cellpadding="0">
