@@ -29,6 +29,9 @@
 		<put-attribute name="body" value="/WEB-INF/login/loginForm.jsp" />
 	</definition>
 	
+	<definition name="modifyForm" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/login/modifyForm.jsp" />
+	</definition>
 	
 		
 	<!-- 회원가입폼 -->

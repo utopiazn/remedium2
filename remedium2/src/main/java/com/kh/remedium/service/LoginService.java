@@ -22,15 +22,23 @@ public class LoginService implements LoginDao{
 	}
 
 	@Override
-	public Object memberModify(MemberModel member) {
+	public MemberModel selectOne(String memberId) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.sqlSessionTemplate.selectOne("member.selectOne",memberId);
+	}
+
+
+
+	@Override
+	public void memberModify(MemberModel member) {
+	
+		this.sqlSessionTemplate.update("member.modify",member);
 	}
 
 	@Override
-	public Object memberDelete(MemberModel member) {
-		// TODO Auto-generated method stub
-		return null;
+	public void memberDelete(MemberModel member) {
+		
+		
 	}
 	
 }
