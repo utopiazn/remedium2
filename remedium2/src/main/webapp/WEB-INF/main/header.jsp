@@ -39,7 +39,7 @@
 	Cash point: ${cash}
 	</c:when>
 	<c:otherwise>
-	<a href="joinForm.action" style="color: white;">회원가입</a>
+	<a href="joinForm" style="color: white;">회원가입</a>
 	&nbsp;
 	<a href="loginForm" style="color: white;">로그인</a>
 	&nbsp;
