@@ -10,6 +10,8 @@ public interface LoginDao {
 	
 	public MemberModel selectOne(String memberId);
 	
-	public void memberDelete(MemberModel member);
+	public void memberDelete(String memberId); 
+	
+	public Object findId(MemberModel member);
 	
 }

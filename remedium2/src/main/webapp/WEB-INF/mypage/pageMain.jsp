@@ -30,14 +30,14 @@ function open_win_noresizable(url, name) {
 			</c:when>
 		
 			<c:otherwise>
-		 		<img alt="회원정보 수정" src="/remedium/resources/image/modify.png" width="100%" height="100%"  onclick="location.href='loginModifyForm?memberID=${memberId}'" > 
+		 		<img alt="회원정보 수정" src="/remedium/resources/image/modify.png" width="100%" height="100%"  onclick="location.href='modify'" > 
 			</c:otherwise>
 		
 		</c:choose> 
 	 </div>
  
    	<div id="out">
- 		<img alt="회원 탈퇴" src="/remedium/resources/image/out.png" width="100%" height="100%"  onClick="location.href='loginDeleteForm?memberID=${memberId}'">
+ 		<img alt="회원 탈퇴" src="/remedium/resources/image/out.png" width="100%" height="100%"  onClick="location.href='delete'">
    	</div>
    	
 </div>

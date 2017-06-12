@@ -18,11 +18,11 @@ public class LoginController {
 	
 	 /**
      * <pre>
-     * 1. MethodName : 로그인, 로그아웃, 회원
+     * 1. MethodName : 로그인, 로그아웃, 회원 수정, 회원 탈퇴, 아이디 찾기, 비밀번호 찾기
      * 2. ClassName  : MainController.java
      * 3. Comment    : 메인 화면.
-     * 4. 작성자       :  장조성
-     * 5. 작성일       : 2017. 6.7.
+     * 4. 작성자       :  허어녕
+     * 5. 작성일       : 2017. 6.12
      * </pre>
      *
      * @param 
@@ -84,16 +84,15 @@ public class LoginController {
 	@RequestMapping(value="/modify", method=RequestMethod.GET)
 	public ModelAndView memberModify(HttpSession session){
 		
-		if(session == null) {
-			mav.setViewName("loginForm");
+		if(session != null) {
+			String memberId = session.getAttribute("memberId").toString();
+			
+			MemberModel member = LoginService.selectOne(memberId);
+			mav.addObject("member", member);
+			mav.setViewName("modifyForm");
 			return mav;
 		}
-		
-		String memberId = session.getAttribute("memberId").toString();
-		
-		MemberModel member = LoginService.selectOne(memberId);
-		mav.addObject("member", member);
-		mav.setViewName("modifyForm");
+		mav.setViewName("loginForm");
 		return mav;
 	}
 	
@@ -112,6 +111,47 @@ public class LoginController {
 		
 		return mav;
 	
+	}
+	
+	@RequestMapping(value="/delete")
+	public ModelAndView memberDelete(MemberModel member, HttpServletRequest request) {
+		HttpSession session = request.getSession(false);
+		
+		
+		if(session != null){
+			String memberId = session.getAttribute("memberId").toString();
+			
+			LoginService.memberDelete(memberId);
+			session.invalidate();
+			mav.setViewName("redirect:/main");
+			return mav;
+		}
+		
+		
+		mav.setViewName("loginForm");
+		return mav;	
+	}
+	
+	@RequestMapping(value="/findId", method=RequestMethod.GET)
+	public ModelAndView findId() {
+		
+		mav.setViewName("findIdForm");
+		return mav;
+	}
+		
+	@RequestMapping(value="/findId", method=RequestMethod.POST)
+	public ModelAndView findId(MemberModel member, HttpServletRequest request){
+		
+			String memberID = LoginService.findId(member);
+			
+			if(memberID != null){
+				mav.addObject("memberID", memberID);
+				mav.setViewName("findIdSuccess");
+				return mav;
+			}
+			mav.setViewName("findError");
+			return mav;
+		
 	}
 	
 }
