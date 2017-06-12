@@ -33,6 +33,13 @@
 		<put-attribute name="body" value="/WEB-INF/login/modifyForm.jsp" />
 	</definition>
 	
+		
+	<!-- 회원가입폼 -->
+ 	<definition name="joinForm" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/join/joinForm.jsp" />
+	</definition>
+	
+	
  <!-- main -->
 
 <!--
