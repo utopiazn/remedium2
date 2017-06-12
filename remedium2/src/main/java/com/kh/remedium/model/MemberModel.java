@@ -18,6 +18,9 @@ public class MemberModel {
 	private String zipcode; // 회원 우편번호
 	private String addr1; // 회원 주소
 	private String addr2; // 회원 상세주소
+	private String addr11;
+	private String addr22;
+	
 	private int cash; // 회원 캐쉬 
 	private int userCheck; // 회원 사용여부
 	

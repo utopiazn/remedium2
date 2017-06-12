@@ -29,7 +29,7 @@
 	<c:choose>
 	<c:when test="${memberId != null}"> <!-- 아이디가 null이 아닌 경우 -->
 	
-	<a href="myPageMain.action" style="color: white;">마이페이지</a>
+	<a href="myPageMain" style="color: white;">마이페이지</a>
 	&nbsp;
 	<a href="logout" style="color: white;">로그아웃</a>
 	&nbsp;
@@ -41,7 +41,7 @@
 	<c:otherwise>
 	<a href="joinForm" style="color: white;">회원가입</a>
 	&nbsp;
-	<a href="loginForm" style="color: white;">로그인</a>
+	<a href="login" style="color: white;">로그인</a>
 	&nbsp;
 	</c:otherwise>
 	</c:choose>
