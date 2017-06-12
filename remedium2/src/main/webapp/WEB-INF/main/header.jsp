@@ -29,7 +29,7 @@
 	<c:choose>
 	<c:when test="${memberId != null}"> <!-- 아이디가 null이 아닌 경우 -->
 	
-	<a href="myPageMain.action" style="color: white;">마이페이지</a>
+	<a href="myPageMain" style="color: white;">마이페이지</a>
 	&nbsp;
 	<a href="logout" style="color: white;">로그아웃</a>
 	&nbsp;
@@ -55,28 +55,28 @@
 <c:choose>
 <c:when test="${session.memberId != null}">
 <div id="menu" style="padding-left: 275px;">
-	<a href="info.action" style="color: white;">Remedium</a>
+	<a href="info" style="color: white;">Remedium</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <!-- <a href="roomInfoView.action?room_class='1'">객실 소개   </a> -->
     <a href="roomInfoView.action?roomClass=1" style="color: white;">Room</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="facilitiesList.action" style="color: white;">Facility</a>
+    <a href="facilities" style="color: white;">Facility</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="eventList.action" style="color: white;">Event</a>
+    <a href="eventList" style="color: white;">Event</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="boardList.action" style="color: white;">QnA</a>
 </div>
 </c:when>
 <c:otherwise>
 <div id="menu">
-	<a href="info.action" style="color: white;">Remedium</a>
+	<a href="info" style="color: white;">Remedium</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <!-- <a href="roomInfoView.action?room_class='1'">객실 소개   </a> -->
     <a href="roomInfoView.action?roomClass=1" style="color: white;">Room</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="facilitiesList.action" style="color: white;">Facility</a>
+    <a href="facilities" style="color: white;">Facility</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="eventList.action" style="color: white;">Event</a>
+    <a href="eventList" style="color: white;">Event</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="boardList.action" style="color: white;">QnA</a>
 </div>

@@ -14,14 +14,16 @@
         <setting name="defaultStatementTimeout"   value="25000"/>  
 	</settings>
 	
-	<!-- ModelMapping -->
+	
+
+ 	<!-- ModelMapping -->
 	<typeAliases>
  		<typeAlias alias="member" type="com.kh.remedium.model.MemberModel" />
- 	</typeAliases> 
-	 
+ 	</typeAliases>  
 	 
 	 <!-- SQL 정의한 xml문서 Mapping -->
  	<mappers>
 	    <mapper resource="mybatis/config/memberSQL.xml" />
+	    <mapper resource="mybatis/config/facilitiesSQL.xml" />
 	</mappers> 
 </configuration> 

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace = "com.kh.remedium.facilities.FacilitiesMapper">
+	
+	<resultMap type="Facilities" id="facilitiesRes">
+		<result property="no" column="no" />
+		<result property="name" column="name" />
+		<result property="content" column="content" />
+		<result property="time" column="time" />
+		<result property="image" column="image" />			
+	</resultMap>
+	
+	<sql id="select-all">
+		SELECT * FROM FACILITIES
+	</sql>
+
+	<sql id="where-no">
+		WHERE NO = #no#
+	</sql>
+	
+	<!-- 편의시설 리스트 -->
+	<select id="getList" resultMap="facilitiesRes">
+		<include refid="select-all" />
+		ORDER BY NO ASC
+	</select>
+	
+	<!-- 편의시설 개별 뷰 -->
+	<select id="getFacilities" resultMap="facilitiesRes">
+		<include refid="select-all" />
+		<include refid="where-no" />
+	</select>
+	
+	<!-- 편의시설 추가 -->
+	<insert id="insertFacilities" parameterType="com.kh.remedium.facilities.Facilities">
+		INSERT INTO FACILITIES(NO, NAME, CONTENT, TIME) 
+		VALUES (#no#, #name#, #content#, #time#)
+	</insert>
+	
+	<!-- 편의시설 수정 -->
+	<update id="updateFacilities" parameterType="com.kh.remedium.facilities.Facilities">
+		UPDATE FACILITIES SET NO = #no#, NAME = #name#, CONTENT = #content#, 
+		TIME = #time#
+		<include refid="where-no"/>
+	</update>
+	
+	<!-- 편의시설 이미지 수정 -->
+	<update id="updateImage" parameterType="com.kh.remedium.facilities.Facilities"> 
+		UPDATE FACILITIES SET IMAGE = #image#
+		<include refid="where-no"/>
+	</update>
+	
+	<!-- 편의시설 삭제 -->
+	<delete id="deleteFacilities" parameterType="com.kh.remedium.facilities.Facilities">
+		DELETE FROM FACILITIES
+		<include refid="where-no"/>
+	</delete>
+	
+</mapper>
