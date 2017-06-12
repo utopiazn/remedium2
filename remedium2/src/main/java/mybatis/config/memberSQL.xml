@@ -33,7 +33,7 @@
   
  
 	<!-- 아이디 의 해당하는 정보를 모두 가져옴  -->
-	<select id="selectOne" resultMap="memberRes">
+	<select id="selectOne" resultMap="memberRes" parameterType="String">
 		<include refid="select-all" />
 		<include refid="where-memberID" />
 	</select>
@@ -43,6 +43,13 @@
 		<include refid="where-memberID" />
 		AND memberPassword = #{memberPassword}
 	</select>
+	
+	<update id="modify" parameterType="member">
+		update member set memberPassword = #{memberPassword}, memberName = #{memberName},
+		 		gender = #{gender}, birthday = #{birthday}, phone = #{phone}, email = #{email}, zipcode = #{zipcode},
+		 		addr1 = #{addr1}, addr2 = #{addr2} 
+		<include refid="where-memberID" />
+	</update>
 	
 
 

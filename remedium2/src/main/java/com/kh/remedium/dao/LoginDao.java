@@ -6,8 +6,10 @@ public interface LoginDao {
 	
 	public MemberModel memberLogin(MemberModel member);
 	
-	public Object memberModify(MemberModel member);
+	public void memberModify(MemberModel member);
 	
-	public Object memberDelete(MemberModel member);
+	public MemberModel selectOne(String memberId);
+	
+	public void memberDelete(MemberModel member);
 	
 }

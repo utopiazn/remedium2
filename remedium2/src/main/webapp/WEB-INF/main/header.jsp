@@ -41,7 +41,7 @@
 	<c:otherwise>
 	<a href="joinForm.action" style="color: white;">회원가입</a>
 	&nbsp;
-	<a href="loginForm" style="color: white;">로그인</a>
+	<a href="login" style="color: white;">로그인</a>
 	&nbsp;
 	</c:otherwise>
 	</c:choose>
