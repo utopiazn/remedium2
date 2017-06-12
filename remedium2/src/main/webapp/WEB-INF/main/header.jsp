@@ -55,28 +55,28 @@
 <c:choose>
 <c:when test="${session.memberId != null}">
 <div id="menu" style="padding-left: 275px;">
-	<a href="info.action" style="color: white;">Remedium</a>
+	<a href="info" style="color: white;">Remedium</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <!-- <a href="roomInfoView.action?room_class='1'">객실 소개   </a> -->
     <a href="roomInfoView.action?roomClass=1" style="color: white;">Room</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="facilitiesList.action" style="color: white;">Facility</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="eventList.action" style="color: white;">Event</a>
+    <a href="eventList" style="color: white;">Event</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="boardList.action" style="color: white;">QnA</a>
 </div>
 </c:when>
 <c:otherwise>
 <div id="menu">
-	<a href="info.action" style="color: white;">Remedium</a>
+	<a href="info" style="color: white;">Remedium</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <!-- <a href="roomInfoView.action?room_class='1'">객실 소개   </a> -->
     <a href="roomInfoView.action?roomClass=1" style="color: white;">Room</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="facilitiesList.action" style="color: white;">Facility</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="eventList.action" style="color: white;">Event</a>
+    <a href="eventList" style="color: white;">Event</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="boardList.action" style="color: white;">QnA</a>
 </div>
