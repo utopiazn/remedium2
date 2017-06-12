@@ -44,12 +44,21 @@
 		AND memberPassword = #{memberPassword}
 	</select>
 	
+	<select id="FindId" resultType="String" parameterType="memberRes" >
+		select memberID from member where memberName = #{memberName} AND birthday = #{birthday}
+	</select>
+	
 	<update id="modify" parameterType="member">
 		update member set memberPassword = #{memberPassword}, memberName = #{memberName},
 		 		gender = #{gender}, birthday = #{birthday}, phone = #{phone}, email = #{email}, zipcode = #{zipcode},
 		 		addr1 = #{addr1}, addr2 = #{addr2} 
 		<include refid="where-memberID" />
 	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete from member CASCADE
+		<include refid="where-memberID" />
+	</delete>
 	
 
 

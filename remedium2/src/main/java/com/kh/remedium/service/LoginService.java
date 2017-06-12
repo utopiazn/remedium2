@@ -36,9 +36,17 @@ public class LoginService implements LoginDao{
 	}
 
 	@Override
-	public void memberDelete(MemberModel member) {
+	public void memberDelete(String memberId) {
 		
-		
+		this.sqlSessionTemplate.delete("member.delete", memberId);
 	}
+
+	@Override
+	public String findId(MemberModel member) {
+		
+		return this.sqlSessionTemplate.selectOne("member.findId", member);
+	}
+	
+	
 	
 }
