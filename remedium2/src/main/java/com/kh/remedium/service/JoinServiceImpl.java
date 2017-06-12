@@ -13,17 +13,16 @@ import com.kh.remedium.dao.joinDAO;
 
 @Service("joinService")
 public class JoinServiceImpl implements JoinService {
-	
+    
 
-	Logger log = Logger.getLogger(this.getClass());
-	
-	@Resource(name="sampleDAO")
-	private joinDAO joinDAO;
+    Logger log = Logger.getLogger(this.getClass());
+    
+    @Resource(name="sampleDAO")
+    private joinDAO joinDAO;
 
-	@Override
-	public void insertBoard(Map<String, Object> map) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
-
+    @Override
+    public void insertBoard(Map<String, Object> map) throws Exception {
+        // TODO Auto-generated method stub
+        
+    }
 }
