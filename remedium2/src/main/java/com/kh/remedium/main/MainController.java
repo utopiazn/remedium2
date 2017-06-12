@@ -50,6 +50,8 @@ public class MainController {
 		
 		//mav.addObject(session);
 		
+		
+		
 		//mav.addObject("memberId", null);
 		
 		mav.setViewName("main3");

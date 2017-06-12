@@ -135,6 +135,7 @@ public class MemberController {
 			return mav;	
 		}
 		
+
 		if(!member.getZipcode1().equals("")){
 			member.setZipcode(member.getZipcode1());
 		}
@@ -149,6 +150,7 @@ public class MemberController {
 		
 		memberService.memberModify(member);
 		mav.setViewName("redirect:/main");
+
 		
 		return mav;
 	
