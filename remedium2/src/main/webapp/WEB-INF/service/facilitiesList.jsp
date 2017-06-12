@@ -67,7 +67,7 @@ color: white;
 	
 	</c:if>
 	</div>
-	<c:forEach var="i" items="${list}" begin="0" varStatus="status" end="${size}">
+	<c:forEach var="i" items="${list}" begin="0" varStatus="status">
 		<div class="line1">
 		<div class="content"><strong>시설이름</strong></div>
 		<div class="content">

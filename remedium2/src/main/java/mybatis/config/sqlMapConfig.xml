@@ -14,12 +14,12 @@
         <setting name="defaultStatementTimeout"   value="25000"/>  
 	</settings>
 	
-	<!-- ModelMapping -->
+	
+
+ 	<!-- ModelMapping -->
 	<typeAliases>
  		<typeAlias alias="member" type="com.kh.remedium.model.MemberModel" />
- 		<typeAlias alias="facilities" type="com.kh.remedium.facilities.Facilities" />
- 	</typeAliases> 
-	 
+ 	</typeAliases>  
 	 
 	 <!-- SQL 정의한 xml문서 Mapping -->
  	<mappers>
