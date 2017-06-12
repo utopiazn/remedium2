@@ -44,43 +44,46 @@ text-align:right;
 <c:set var="cDateR" value="<%=new ProjectUtil()%>"/>
 </head>
 <body>
-<div class="content">
-<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
-	<tr>
-		<td align="center"><h2>객실 예약 리스트</h2>
-		<hr align="center" width="40%" size="1" color="gray">
-		<br/>
-		</td>
-	</tr>
-</table>
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-<tr>
-	<td colspan="8" class="line1" ><input class="button" type="button" value="마이페이지로 이동"onClick="location.href='myPageMain'">
-	</td>
-</tr>
-	<tr class="top" align="center">
-		<td><strong>회원 ID</strong></td>
-		<td><strong>예약 번호</strong></td>
-		<td><strong>객실 번호</strong></td>
-		<td><strong>입실 날짜</strong></td>
-		<td><strong>퇴실 날짜</strong></td>
-		<td><strong>예약 인원</strong></td>
-		<td><strong>예약금</strong></td>
-		<td><strong>예약완료 여부</strong></td>
-	</tr>
-	
-<c:choose>
-	<c:when test="reslist.size() <= 0">
-		<tr>
-			<td colspan="8" align="center">예약된 객실이 없습니다</td>
-		</tr>
-		<tr bgcolor="#777777">
-			<td height="1" colspan="8"></td>
-		</tr>
-	</c:when>
-</c:choose>
 
-<!-- <s:if test="reslist.size() <= 0">
+
+<div class="content">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+		<tr>
+			<td align="center"><h2>객실 예약 리스트</h2>
+			<hr align="center" width="40%" size="1" color="gray">
+			<br/>
+			</td>
+		</tr>
+	</table>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td colspan="8" class="line1" ><input class="button" type="button" value="마이페이지로 이동"onClick="location.href='myPageMain'">
+			</td>
+		</tr>
+		<tr class="top" align="center">
+			<td><strong>회원 ID</strong></td>
+			<td><strong>예약 번호</strong></td>
+			<td><strong>객실 번호</strong></td>
+			<td><strong>입실 날짜</strong></td>
+			<td><strong>퇴실 날짜</strong></td>
+			<td><strong>예약 인원</strong></td>
+			<td><strong>예약금</strong></td>
+			<td><strong>예약완료 여부</strong></td>
+		</tr>
+		
+		<c:choose>
+			<c:when test="reslist.size() <= 0">
+				<tr>
+					<td colspan="8" align="center">예약된 객실이 없습니다</td>
+				</tr>
+				<tr bgcolor="#777777">
+					<td height="1" colspan="8"></td>
+				</tr>
+			</c:when>
+		</c:choose>
+
+<!--  <s:if test="reslist.size() <= 0">
 	<tr>
 		<td colspan="8" align="center">예약된 객실이 없습니다</td>
 	</tr>
@@ -88,8 +91,9 @@ text-align:right;
 		<td height="1" colspan="8"></td>
 	</tr>
 </s:if>
-<s:else> -->
-
+<s:else>
+</s:else> 
+ -->
 <c:forEach var="reslist" items="${reslist }" >
 	<tr>
 		<td><c:set property="reslist" value="memberID" /></td>
