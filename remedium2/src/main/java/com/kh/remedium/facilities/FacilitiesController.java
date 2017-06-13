@@ -19,8 +19,9 @@ public class FacilitiesController {
     public String facilitiesList(Model model) throws Exception{
     	
 		ArrayList<Facilities> list = facilitiesDaoService.getList();
+		
 		model.addAttribute("list", list);
     	
-    	return "service/facilitiesList";
+    	return "facilitiesList";
     }
 }

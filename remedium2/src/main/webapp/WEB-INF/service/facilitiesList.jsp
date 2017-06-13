@@ -67,19 +67,19 @@ color: white;
 	
 	</c:if>
 	</div>
-	<c:forEach var="i" items="${list}" begin="0" varStatus="status">
+	<c:forEach var="fac" items="${list}" begin="0" varStatus="status">
 		<div class="line1">
 		<div class="content"><strong>시설이름</strong></div>
 		<div class="content">
-			<b><a href='/remedium/facilitiesView.action?no=<s:property value="no" />'>${name}</a></b>
+			<b><a href='/remedium/facilitiesView.action?no=${fac.no}'>${fac.name}</a></b>
 		</div>
 		<div class="content"><strong>운영시간</strong></div>
-		<div class="content">${time}</div>
+		<div class="content">${fac.time}</div>
 		</div>
 		
 		<div class="line2">
-		<div><a href='/remedium/facilitiesView.action?no=${no}'></a>
-		<img width="100%" height="600" alt="시설사진" src="/remedium/image/facImage/${image}" ></div>
+		<div><a href='/remedium/facilitiesView.action?no=${fac.no}'>
+		<img width="100%" height="600" alt="시설사진" src="/remedium/resources/image/facImage/${fac.image}" ></a></div>
 		</div>
 		<div class="line3">&nbsp;</div>
 	</c:forEach>

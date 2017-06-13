@@ -75,6 +75,11 @@
 		<put-attribute name="body" value="/WEB-INF/service/eventList.jsp" />
 	</definition>
 	
+	<!--편의시설 리스트 -->
+		<definition name="facilitiesList" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/service/facilitiesList.jsp" />
+	</definition>
+	
 		
 	<!-- 마이 페이지 폼 -->
  	<definition name="mypage" extends="main2">
