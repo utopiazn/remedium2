@@ -85,10 +85,11 @@ public class MemberController {
 		
 		
 		commandMap.toString();
+		System.out.println(commandMap.isEmpty());
 		System.out.println("회원처리폼22222222222222");
 
 		joinService.insert(commandMap.getMap());
-		
+
 		System.out.println("회원처리폼444444444444444444");
 		
 		mav.setViewName("redirect:/loginForm");

@@ -60,7 +60,7 @@
     <!-- <a href="roomInfoView.action?room_class='1'">객실 소개   </a> -->
     <a href="roomInfoView.action?roomClass=1" style="color: white;">Room</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="facilities" style="color: white;">Facility</a>
+    <a href="/remedium/facility/list" style="color: white;">Facility</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="eventList" style="color: white;">Event</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -74,7 +74,7 @@
     <!-- <a href="roomInfoView.action?room_class='1'">객실 소개   </a> -->
     <a href="roomInfoView.action?roomClass=1" style="color: white;">Room</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="facilities" style="color: white;">Facility</a>
+    <a href="/remedium/facility/list" style="color: white;">Facility</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="eventList" style="color: white;">Event</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
