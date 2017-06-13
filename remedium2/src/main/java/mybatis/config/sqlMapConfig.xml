@@ -24,6 +24,7 @@
 	 <!-- SQL 정의한 xml문서 Mapping -->
  	<mappers>
 	    <mapper resource="mybatis/config/memberSQL.xml" />
+	    <mapper resource="mybatis/config/memberSQL2.xml" />
 	    <mapper resource="mybatis/config/facilitiesSQL.xml" />
 	</mappers> 
 </configuration> 
