@@ -26,8 +26,10 @@ public class FacilitiesDaoService implements FacilitiesDao {
 
 	@Override
 	public Facilities getFacilities(int no) {
-		// TODO Auto-generated method stub
-		return null;
+		Facilities result = new Facilities();
+		FacilitiesMapper facilitiesMapper = sqlSession.getMapper(FacilitiesMapper.class);
+		result = facilitiesMapper.getFacilities(no);
+		return result;
 	}
 
 	@Override

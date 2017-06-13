@@ -71,14 +71,14 @@ color: white;
 		<div class="line1">
 		<div class="content"><strong>시설이름</strong></div>
 		<div class="content">
-			<b><a href='/remedium/facilitiesView.action?no=${fac.no}'>${fac.name}</a></b>
+			<b><a href='/remedium/facility/article?no=${fac.no}'>${fac.name}</a></b>
 		</div>
 		<div class="content"><strong>운영시간</strong></div>
 		<div class="content">${fac.time}</div>
 		</div>
 		
 		<div class="line2">
-		<div><a href='/remedium/facilitiesView.action?no=${fac.no}'>
+		<div><a href='/remedium/facility/article?no=${fac.no}'>
 		<img width="100%" height="600" alt="시설사진" src="/remedium/resources/image/facImage/${fac.image}" ></a></div>
 		</div>
 		<div class="line3">&nbsp;</div>

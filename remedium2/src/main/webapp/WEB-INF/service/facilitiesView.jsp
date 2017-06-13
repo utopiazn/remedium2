@@ -47,7 +47,7 @@ color: black;
 <div class="content">
 <table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
 	<tr>
-		<td align="center"><h2>${resultClass.name}</h2>
+		<td align="center"><h2>${article.name}</h2>
 		<hr align="center" width="60%" size="1" color="gray">
 		<br/>
 		</td>
@@ -60,16 +60,16 @@ color: black;
 <input class="button" type="button" value="시설정보수정"onClick="location.href='facilitiesModifyForm.action?no=<s:property value="resultClass.no" />'">  
 <input class="button" type="button" value="시설삭제"onClick="location.href='facilitiesDelete.action?no=<s:property value="resultClass.no" />&image=<s:property value="resultClass.image" />'">
 </c:if>
-<input class="button" type="button" value="시설목록"onClick="location.href='facilitiesList.action'">
+<input class="button" type="button" value="시설목록"onClick="location.href='list'">
 </div>
 
 <div class="line3">
-<img width="100%" height="500" alt="시설사진" src="/remedium/image/facImage/<s:property value='resultClass.image'/>" >
+<img width="100%" height="500" alt="시설사진" src="/remedium/resources/image/facImage/${article.image}" >
 </div>
 	
 <div class="line3">
-${resultClass.content}<br/>
-운영시간 : ${resultClass.time}<br/>
+${article.content}<br/>
+운영시간 : ${article.time}<br/>
 </div>
 
 
