@@ -18,6 +18,9 @@ public class CommandMap {
 	
 	public void put(String key, Object value){
 		
+		
+		System.out.println("key"+key);
+		
 		map.put(key, value);
 	}
 	
@@ -26,8 +29,9 @@ public class CommandMap {
 	public String toString() {
 		// TODO Auto-generated method stub
     	
-    	  System.out.println("시작");
+    	  System.out.println("시작" + map.size());
     	
+    	  
     	
     	for(String key : map.keySet()){
     		 

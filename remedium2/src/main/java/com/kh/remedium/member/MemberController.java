@@ -19,6 +19,8 @@ import com.kh.remedium.service.JoinService;
 @Controller
 public class MemberController {
 	
+	
+
 	Logger log = Logger.getLogger(this.getClass());
 	
 
@@ -27,7 +29,8 @@ public class MemberController {
 	@Resource
 	private MemberService memberService;
 	
-	@Resource
+	
+	@Resource(name="joinService")	
 	private JoinService joinService;
 	
 	

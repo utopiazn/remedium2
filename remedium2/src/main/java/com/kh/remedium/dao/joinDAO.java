@@ -11,7 +11,7 @@ public class joinDAO extends AbstractDAO{
 	
 	
 	public void insert(Map<String, Object> map) throws Exception {
-		insert("join.insert", map);
+		insert("joina.insert", map);
 	}
 
 }

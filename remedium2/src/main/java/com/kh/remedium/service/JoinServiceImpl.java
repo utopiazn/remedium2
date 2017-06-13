@@ -11,13 +11,13 @@ import org.springframework.stereotype.Service;
 
 import com.kh.remedium.dao.joinDAO;
 
-@Service
+@Service("joinService")
 public class JoinServiceImpl implements JoinService {
     
 
     Logger log = Logger.getLogger(this.getClass());
     
-    @Resource
+    @Resource(name="joinDAO")
     private joinDAO joinDAO;
 
     @Override

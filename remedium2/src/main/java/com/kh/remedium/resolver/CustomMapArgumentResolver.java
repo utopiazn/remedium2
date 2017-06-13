@@ -22,6 +22,8 @@ public class CustomMapArgumentResolver implements HandlerMethodArgumentResolver 
 			WebDataBinderFactory binderFactory) throws Exception {
 		// TODO Auto-generated method stub
 		
+		System.out.println("CustomMapArgumentResolver  resolveArgument");
+		
 		CommandMap commandMap = new CommandMap();
 		
 		HttpServletRequest request = (HttpServletRequest) webRequest.getNativeRequest();
