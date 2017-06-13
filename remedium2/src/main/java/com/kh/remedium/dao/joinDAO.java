@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 public class joinDAO extends AbstractDAO{
 	
 	
-	public void insertBoard(Map<String, Object> map) throws Exception {
+	public void insert(Map<String, Object> map) throws Exception {
 		insert("join.insert", map);
 	}
 

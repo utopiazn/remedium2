@@ -1,37 +1,40 @@
 package com.kh.remedium.member;
 
+import java.util.List;
+import java.util.Map;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.kh.remedium.common.CommandMap;
+import com.kh.remedium.service.JoinService;
+
 @Controller
 public class MemberController {
 	
+	Logger log = Logger.getLogger(this.getClass());
 	
-	 /**
-     * <pre>
-     * 1. MethodName : 로그인, 로그아웃, 회원 수정, 회원 탈퇴, 아이디 찾기, 비밀번호 찾기
-     * 2. ClassName  : MainController.java
-     * 3. Comment    : 메인 화면.
-     * 4. 작성자       :  허어녕
-     * 5. 작성일       : 2017. 6.12
-     * </pre>
-     *
-     * @param 
-     * @param 
-     * @return
-     * @throws Exception
-	*/
+
+	ModelAndView mav = new ModelAndView();
+	
+	@Resource
+	private MemberService memberService;
+	
+	@Resource
+	private JoinService joinService;
+	
 	
 	 /**
      * <pre>
      * 1. MethodName : mainForm
-     * 2. ClassName  : JoinController.java
+     * 2. ClassName  : MemberController.java
      * 3. Comment    : 회원 가입 폼.
      * 4. 작성자       :  장조성
      * 5. 작성일       : 2017. 6.12.
@@ -41,16 +44,11 @@ public class MemberController {
      * @param 
      * @return
      * @throws Exception
-	*/
-	
-	ModelAndView mav = new ModelAndView();
-	
-	@Resource
-	private MemberService memberService;
-	
+	*/	
+
 	//회원 가입 폼
 	@RequestMapping(value="/joinForm")
-	public ModelAndView mainForm(HttpSession session){
+	public ModelAndView mainForm(){
 		
 		System.out.println("회원가입폼");
 
@@ -58,6 +56,46 @@ public class MemberController {
 
 		return mav;
 	}
+	
+	
+
+	 /**
+    * <pre>
+    * 1. MethodName : joinAddForm
+    * 2. ClassName  : MemberController.java
+    * 3. Comment    : 회원 가입 폼 처리폼.
+    * 4. 작성자       :  장조성
+    * 5. 작성일       : 2017. 6.13
+    * </pre>
+    *
+    * @param 
+    * @param 
+    * @return
+    * @throws Exception
+	*/	
+	
+	@RequestMapping(value="/joinAddForm")
+	public ModelAndView joinAddForm(CommandMap commandMap) throws Exception{
+		
+		System.out.println("회원처리폼");
+
+		
+		
+		commandMap.toString();
+		System.out.println("회원처리폼22222222222222");
+
+		joinService.insert(commandMap.getMap());
+		
+		System.out.println("회원처리폼444444444444444444");
+		
+		mav.setViewName("redirect:/loginForm");
+
+		return mav;
+	}
+	
+	
+	
+	
 	
 	// 로그인 폼
 	@RequestMapping(value="/login", method=RequestMethod.GET)

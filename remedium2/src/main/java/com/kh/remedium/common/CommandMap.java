@@ -2,6 +2,7 @@ package com.kh.remedium.common;
 
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -21,7 +22,28 @@ public class CommandMap {
 	}
 	
 	  
-    public Object remove(String key){
+    @Override
+	public String toString() {
+		// TODO Auto-generated method stub
+    	
+    	  System.out.println("시작");
+    	
+    	
+    	for(String key : map.keySet()){
+    		 
+            String value = (String) map.get(key);
+            		
+ 
+            System.out.println(key+" : "+value);
+ 
+        }
+    	
+    	  System.out.println("끝");
+    	
+		return super.toString();
+	}
+
+	public Object remove(String key){
     	
     	return map.remove(key);
     }

@@ -134,7 +134,7 @@
 
 
 <!-- 로그인폼으로 이동 -->
-	<form name="myForm" action="join"  method="post"  onsubmit="return validation2(this);">
+	<form name="myForm" action="joinAddForm"  method="post"  onsubmit="return validation2(this);">
 
 		<table width="550" border="0" cellspacing="0" cellpadding="0">
 			
@@ -151,9 +151,6 @@
 				
 				<td width="50" bgcolor="#FFFFFF" align="left">
 				
-					<s:textfield name="memberID" theme="simple" value="%{resultClass.memberID}" cssStyle="width:270px" maxlength="50"/>
-					&nbsp;
-					<!-- <s:textfield name="memberID" theme="simple"  cssStyle="width:270px" maxlength="50"/>				 -->
 					 <input type="text" name="memberID" size="40" >
 			
 					&nbsp;
@@ -177,9 +174,6 @@
 					&nbsp;
 					<input type="password" name="memberPassword"  />
 					
-					<!-- <s:password name="memberPassword" theme="simple" value="%{paramClass.memberPassword}" cssStyle="width:270px" maxlength="50" />					 
-					 -->
-					
 				</td>
 			</tr>
 			 <tr bgcolor="#777777">
@@ -195,8 +189,6 @@
 				<td width="50" bgcolor="#FFFFFF" align="left">
 					&nbsp;
 					<input type="password" name="memberPassword2" />
-					
-					<!-- <s:password name="memberPassword2" theme="simple"  cssStyle="width:270px" maxlength="50"/> -->					
 				</td>
 			</tr>
 			 <tr bgcolor="#777777">
@@ -211,7 +203,6 @@
 			
 				<td width="50" bgcolor="#FFFFFF" align="left">
 					&nbsp;
-					<!-- <s:textfield name="memberName" theme="simple" value="%{paramClass.memberName}" cssStyle="width:270px" maxlength="50"/>					 -->
 					<input type="text" name="memberName" />
 				</td>
 			</tr>
@@ -247,7 +238,6 @@
 			
 				<td width="50" bgcolor="#FFFFFF" align="left">
 					&nbsp;
-					<!-- <s:textfield name="birthday" theme="simple" value="%{paramClass.birthday}" cssStyle="width:270px" maxlength="50"/> 예)20140407					 -->
 					<input type="text" name="birthday" />예)20140407			
 				</td>
 			</tr>
@@ -264,7 +254,6 @@
 			
 				<td width="50" bgcolor="#FFFFFF" align="left">
 					&nbsp;
-					<!-- <s:textfield name="phone" theme="simple" value="%{resultClass.phone}" cssStyle="width:270px" maxlength="50"/> 	'-' 제외				 -->
 					<input type="text" name="phone" />'-' 제외		
 
 				</td>
@@ -282,7 +271,6 @@
 			
 				<td width="50" bgcolor="#FFFFFF" align="left">
 					&nbsp;
-					<!-- <s:textfield name="email" theme="simple" value="%{resultClass.email}" cssStyle="width:270px" maxlength="50"/> 					 -->
 					<input type="text" name="email" />	
 				</td>
 			</tr>
@@ -315,7 +303,7 @@
 		<br/>
 		
 		<input type="submit" style="width: 15%"  value="가입" class="button" >	
-		<button class="button"  style="width: 15%" type="button" onclick="location.href='loginForm.action' ">취소</button>
+		<button class="button"  style="width: 15%" type="button" onclick="location.href='loginForm' ">취소</button>
 	</form>
 
 </DIV>	

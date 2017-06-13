@@ -5,7 +5,7 @@ import java.util.Map;
 
 public interface JoinService {
 
-    void insertBoard(Map<String, Object> map) throws Exception;
+    void insert(Map<String, Object> map) throws Exception;
     
 }
 

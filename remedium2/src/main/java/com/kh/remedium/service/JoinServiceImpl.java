@@ -21,8 +21,8 @@ public class JoinServiceImpl implements JoinService {
     private joinDAO joinDAO;
 
     @Override
-    public void insertBoard(Map<String, Object> map) throws Exception {
+    public void insert(Map<String, Object> map) throws Exception {
         // TODO Auto-generated method stub
-        
+    	joinDAO.insert(map);
     }
 }
