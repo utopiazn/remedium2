@@ -92,7 +92,7 @@ public class MemberController {
 
 		System.out.println("회원처리폼444444444444444444");
 		
-		mav.setViewName("redirect:/loginForm");
+		mav.setViewName("redirect:/login");
 
 		return mav;
 	}
