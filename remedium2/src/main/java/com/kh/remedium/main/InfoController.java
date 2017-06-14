@@ -1,4 +1,4 @@
-package com.kh.remedium.info;
+package com.kh.remedium.main;
 
 import javax.servlet.http.HttpSession;
 
