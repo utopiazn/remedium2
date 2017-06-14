@@ -49,11 +49,13 @@ public class RoomInfoController {
 	
 	
 	@RequestMapping(value="/roomInfoView")
-	public ModelAndView fdfdff(CommandMap commandMap) throws Exception{
+	public ModelAndView roomInfoView(CommandMap commandMap) throws Exception{
 
 		
 
 		System.out.println("롬정보 패이지로 이동");
+		
+		
 		ModelAndView mav = new ModelAndView("main3");
 		
 		List<Map<String, Object>> list = roomInfoService.selectAll(commandMap.getMap());
@@ -71,5 +73,18 @@ public class RoomInfoController {
 		return mav;
 	}
 	
+	
+	@RequestMapping(value="/roomInfoView2")
+	public String roomInfoView2(CommandMap commandMap, Model model) throws Exception{
+		
+		
+		
+		List<Map<String, Object>> list = roomInfoService.selectAll(commandMap.getMap());
+		
+		model.addAttribute("list",list);
+		
+				
+		return "main3";	
+	}
 
 }
