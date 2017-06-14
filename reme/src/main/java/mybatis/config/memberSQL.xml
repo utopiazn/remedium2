@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace = "member">
+	
+	<resultMap type="member" id="memberRes">
+		<result property="memberID" 		column="memberID" />
+		<result property="memberPassword" 	column="memberPassword" />
+		<result property="memberName" 		column="memberName" />
+		<result property="gender" 			column="gender" />
+		<result property="birthday" 		column="birthday" />
+		<result property="phone" 			column="phone" />
+		<result property="email" 			column="email" />
+		<result property="regdate" 			column="regdate" />
+		<result property="deldate" 			column="deldate" />
+		<result property="userAdmin" 		column="userAdmin" />
+		<result property="zipcode" 			column="zipcode" />
+		<result property="addr1" 			column="addr1" />
+		<result property="addr2" 			column="addr2" />
+		<result property="cash" 			column="cash" />		
+		<result property="userCheck" 		column="userCheck" />			
+	</resultMap>
+	
+	<sql id="select-all">
+		select * from member
+	</sql>
+	
+	<sql id="where-memberID">
+		 where memberID = #{memberID}
+	</sql>
+  
+ 
+	<!-- 아이디 의 해당하는 정보를 모두 가져옴  -->
+	<select id="selectOne" resultMap="memberRes" parameterType="String">
+		<include refid="select-all" />
+		<include refid="where-memberID" />
+	</select>
+	
+	<select id="login" resultMap="memberRes">
+		<include refid="select-all"/>
+		<include refid="where-memberID" />
+		AND memberPassword = #{memberPassword}
+	</select>
+	
+	<select id="findId" resultType="String" parameterType="member" >
+		select memberID from member where memberName = #{memberName} AND birthday = #{birthday}
+	</select>
+	
+	<select id="findPw" resultType="String" parameterType="member" >
+		select memberPassword from member
+		<include refid="where-memberID" />
+		AND memberName = #{memberName} AND birthday = #{birthday}
+	</select>
+	
+	<update id="modify" parameterType="member">
+		update member set memberPassword = #{memberPassword}, memberName = #{memberName},
+		 		gender = #{gender}, birthday = #{birthday}, phone = #{phone}, email = #{email}, zipcode = #{zipcode},
+		 		addr1 = #{addr1}, addr2 = #{addr2} 
+		<include refid="where-memberID" />
+	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete from member CASCADE
+		<include refid="where-memberID" />
+	</delete>
+	
+
+
+
+</mapper>

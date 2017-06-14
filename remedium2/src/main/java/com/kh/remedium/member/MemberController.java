@@ -19,6 +19,8 @@ import com.kh.remedium.service.JoinService;
 @Controller
 public class MemberController {
 	
+	
+
 	Logger log = Logger.getLogger(this.getClass());
 	
 
@@ -27,7 +29,8 @@ public class MemberController {
 	@Resource
 	private MemberService memberService;
 	
-	@Resource
+	
+	@Resource(name="joinService")	
 	private JoinService joinService;
 	
 	
@@ -82,13 +85,14 @@ public class MemberController {
 		
 		
 		commandMap.toString();
+		System.out.println(commandMap.isEmpty());
 		System.out.println("회원처리폼22222222222222");
 
 		joinService.insert(commandMap.getMap());
-		
+
 		System.out.println("회원처리폼444444444444444444");
 		
-		mav.setViewName("redirect:/loginForm");
+		mav.setViewName("redirect:/login");
 
 		return mav;
 	}
