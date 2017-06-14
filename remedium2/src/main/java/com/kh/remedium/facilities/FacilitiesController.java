@@ -33,6 +33,8 @@ public class FacilitiesController {
     	
 		System.out.println(no);
 		
+		
+		
 		Facilities article = facilitiesDaoService.getFacilities(no);
 		
 		model.addAttribute("article", article);

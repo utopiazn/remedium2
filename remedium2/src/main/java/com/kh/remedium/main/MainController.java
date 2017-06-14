@@ -69,6 +69,40 @@ public class MainController {
 		return "main4";
 	}
 	
+	
+	/*
+	
+	private SampleService sampleService;
+	
+	
+	@RequestMapping(value="/sample/openBoardList.do")
+	public ModelAndView openBoardList(CommandMap commandMap) throws Exception{
+		
+		ModelAndView mv = new ModelAndView("/sample/boardList");
+		
+		List<Map<String,Object>> list = sampleService.selectBoardList(commandMap.getMap());
+		
+		mv.addObject("list",list);
+				
+		return mv;	
+	}
+	
+	
+	@RequestMapping(value="/sample/openBoardList.do")
+	public String openBoardList(CommandMap commandMap, Model model) throws Exception{
+		
+		
+		List<Map<String,Object>> list = sampleService.selectBoardList(commandMap.getMap());
+		
+		model.addAttribute("list",list);
+				
+		return "/sample/boardList";	
+	}
+	
+	
+	*/
+	
+	
 
 /*	
 	@RequestMapping(value="/main2")
