@@ -6,6 +6,16 @@
 
 <tiles-definitions>
 
+
+	<!-- 서브메뉴 있음 -->
+	<definition name="main5" template="/WEB-INF/main/main.jsp">
+		<put-attribute name="title" 	value="Remedium Hotel[당신만을 위한 오리엔탈 프리미엄 에디션]" />
+		<put-attribute name="header" 	value="/WEB-INF/main/header.jsp" />		
+		<put-attribute name="lefter" 	value="/WEB-INF/main/lefter/roomClassLefter.jsp" />	
+		<put-attribute name="body" 		value="/WEB-INF/room/roomInfoView.jsp" />		
+		<put-attribute name="footer" 	value="/WEB-INF/main/footer.jsp" />			
+	</definition>
+
 	<definition name="main2" template="/WEB-INF/main/main2.jsp">
 		<put-attribute name="title" value="Remedium Hotel[당신만을 위한 오리엔탈 프리미엄 에디션]" />						
 		<put-attribute name="header" value="/WEB-INF/main/header.jsp" />		
@@ -116,6 +126,25 @@
 		<put-attribute name="body" value="/WEB-INF/board/boardView.jsp" />
 	</definition>	
 			
+	
+	<!-- 객실소개 -->   
+
+	<!-- 롬 소개  리스트(관리자 권한 일대만 호출됨) 호출 -->
+<!-- 	<definition name="roomInfoList" extends="main">		
+		<put-attribute name="lefter" value="/main/lefter/roomClassLefter.jsp" />
+		<put-attribute name="body" value="/room/roomInfoList.jsp" />		
+	</definition> -->
+ 
+	<!-- 롬 소개 리스트 및 개별 정보 호출 -->
+	
+	<definition name="roomInfoView" extends="main5">
+		<put-attribute name="body" value="/WEB-INF/main/info.jsp" />
+	</definition>
+	
+	<definition name="roomInfoView" extends="main5">
+		<put-attribute name="lefter" 	value="/WEB-INF/main/lefter/roomClassLefter.jsp" />	
+		<put-attribute name="body" 		value="/WEB-INF/room/roomInfoView.jsp" />		
+	</definition>
 	
  <!-- main -->
 

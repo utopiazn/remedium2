@@ -1,7 +1,6 @@
 package com.kh.remedium.main;
 
 
-import com.kh.remedium.util.*;
 
 import javax.servlet.http.HttpSession;
 
@@ -15,7 +14,6 @@ public class MainController {
 	
 	
 	ModelAndView mav = new ModelAndView();
-	
 	
 	
     /**
