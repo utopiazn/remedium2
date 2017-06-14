@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+
+	<definition name="main2" template="/WEB-INF/main/main2.jsp">
+		<put-attribute name="title" value="Remedium Hotel[당신만을 위한 오리엔탈 프리미엄 에디션]" />						
+		<put-attribute name="header" value="/WEB-INF/main/header.jsp" />		
+		<put-attribute name="body" value="/WEB-INF/main/body.jsp" /> 
+		<put-attribute name="footer" value="/WEB-INF/main/footer.jsp" />	
+		
+	</definition>
+
+	<definition name="main3" template="/WEB-INF/main/main3.jsp">
+		<put-attribute name="title" value="Remedium Hotel[당신만을 위한 오리엔탈 프리미엄 에디션]" />						
+		<put-attribute name="header" value="/WEB-INF/main/header.jsp" />		
+		<put-attribute name="body" value="/WEB-INF/main/body.jsp" /> 
+		<put-attribute name="footer" value="/WEB-INF/main/footer.jsp" />	
+		
+	</definition>
+	
+	
+	
+	<!-- 로그인 폼 -->
+	<definition name="loginForm" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/member/loginForm.jsp" />
+	</definition>
+	
+	<!-- 아이디 찾기 폼 -->
+	<definition name="findIdForm" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/member/findID.jsp" />
+	</definition>
+	
+	<!-- 아이디 찾기 완료 -->
+	<definition name="findIdSuccess" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/member/findIDSuccess.jsp" />
+	</definition>
+	
+	<!-- 비밀번호 찾기 폼 -->
+	<definition name="findPwForm" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/member/findPw.jsp" />
+	</definition>
+	
+	<!-- 비밀번호 찾기 완료 -->
+	<definition name="findPwSuccess" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/member/findPwSuccess.jsp" />
+	</definition>
+	
+	<!-- 아이디,비번 찾기 오류 -->
+	<definition name="findError" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/member/findError.jsp" />
+	</definition>
+	
+	<!-- 회원 수정 폼 -->
+	<definition name="modifyForm" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/member/modifyForm.jsp" />
+	</definition>
+	
+		
+	<!-- 회원가입폼 -->
+ 	<definition name="joinForm" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/member/joinForm.jsp" />
+	</definition>
+	
+	<!--호텔 인포 -->
+	<definition name="info" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/main/info.jsp" />
+	</definition>
+	
+	<!--이벤트 리스트 -->
+		<definition name="eventList" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/service/eventList.jsp" />
+	</definition>
+	
+	<!--편의시설 리스트 -->
+		<definition name="facilitiesList" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/service/facilitiesList.jsp" />
+	</definition>
+	
+	<!--편의시설 개별 -->
+		<definition name="facilitiesView" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/service/facilitiesView.jsp" />
+	</definition>
+	
+		
+	<!-- 마이 페이지 폼 -->
+ 	<definition name="mypage" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/mypage/pageMain.jsp" />
+	</definition>
+	
+		<!-- 마이 페이지 - 나의 예약 리스트 -->
+		 	<definition name="pageList" extends="main2">
+				<put-attribute name="body" value="/WEB-INF/mypage/pageList.jsp" />
+			</definition>
+		
+		<!-- 마이 페이지 - 캐쉬 리스트 -->
+		 	<definition name="pageListCash" extends="main2">
+				<put-attribute name="body" value="/WEB-INF/mypage/pageListCash.jsp" />
+			</definition>
+			
+		<!-- 마이 페이지 - 회원 탈퇴 -->
+		 	<definition name="checkPassword" extends="main2">
+				<put-attribute name="body" value="/WEB-INF/mypage/checkPassword.jsp" />
+			</definition>
+			
+	
+ <!-- main -->
+
+<!--
+	<definition name="mainForm3" extends="main31">
+		<put-attribute name="body" value="/WEB-INF/main/body.jsp" />
+	</definition>
+	
+
+
+ -->
+ 	<!-- Main Page -->
+<!-- 	<definition name="default" template="/WEB-INF/views/layout/layout.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/layout/header.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/layout/container.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp" />
+	</definition>
+	
+	<definition name="main" template="/WEB-INF/views/layout/layout_main.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/layout/header_main.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/layout/container.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp" />
+	</definition>
+	
+	<definition name="admin" template="/WEB-INF/views/layout/admin/layout.jsp">
+		<put-attribute name="body" value="/WEB-INF/views/layout/admin/container.jsp" />
+	</definition>
+	
+	
+	
+	<definition name="mainForm" extends="default">
+		<put-attribute name="body" value="/WEB-INF/views/layout/main.jsp" />
+	</definition>
+ -->	
+
+	
+
+	
+	
+	
+</tiles-definitions>
+	
+	
