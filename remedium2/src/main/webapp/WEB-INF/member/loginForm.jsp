@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -69,9 +69,9 @@
 		</tr>
 	</table>	
 	<br>
-		 <a href="joinForm.action"><font size=2>회원 가입</font></a>&nbsp;/
-       	 <a href="findIDForm.action"><font size=2>아이디 찾기</font></a>&nbsp;/
-       	 <a href="findPwForm.action"><font size=2>비밀번호 찾기</font></a>
+		 <a href="joinForm"><font size=2>회원 가입</font></a>&nbsp;/
+       	 <a href="findId"><font size=2>아이디 찾기</font></a>&nbsp;/
+       	 <a href="findPw"><font size=2>비밀번호 찾기</font></a>
 </form>
 </center>
 </div>

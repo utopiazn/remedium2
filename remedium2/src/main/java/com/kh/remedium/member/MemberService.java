@@ -1,16 +1,13 @@
-package com.kh.remedium.service;
+package com.kh.remedium.member;
 
 import javax.annotation.Resource;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Service;
 
-import com.kh.remedium.dao.LoginDao;
-import com.kh.remedium.model.MemberModel;
-
 
 @Service
-public class LoginService implements LoginDao{
+public class MemberService implements MemberDao{
 	
 	@Resource(name="sqlSessionTemplate")
 	private SqlSessionTemplate sqlSessionTemplate;
@@ -36,9 +33,19 @@ public class LoginService implements LoginDao{
 	}
 
 	@Override
-	public void memberDelete(MemberModel member) {
+	public void memberDelete(String memberId) {
 		
-		
+		this.sqlSessionTemplate.delete("member.delete", memberId);
 	}
+
+	@Override
+	public String findId(MemberModel member) {
+		return this.sqlSessionTemplate.selectOne("member.findId", member);
+	}
+	
+	public String findPw(MemberModel member) {
+		return this.sqlSessionTemplate.selectOne("member.findPw", member);
+	}
+	
 	
 }

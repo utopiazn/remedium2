@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html lang="ko"  xmlns="http://www.w3.org/1999/xhtml" >
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -74,15 +74,20 @@
 
 <br>
 
-<form action="modify"  method="post" enctype="multipart/form-data" onsubmit="return validation2(this);">
+
+
+
+
+<form action="modify"  method="post" onsubmit="return validation2(this);">
 	<input type="hidden" name="memberID" value="${member.memberID }"/>
-	<input type="hidden" name="regdate" value="${member.regdate}" />
+	<!-- <input type="hidden" name="regdate" value="2017/02/01" />  -->
 	<input type="hidden" name="zipcode" value="${member.zipcode}" />
 	<input type="hidden" name="addr1" value="${member.addr1}" />
 	<input type="hidden" name="addr2" value="${member.addr2}" />
 	<input type="hidden" name="memberName" value="${member.memberName}" />
 	<input type="hidden" name="gender" value="${member.gender}" />
-	
+	 
+	 
 	
 
 <table width="550" border="0" cellspacing="0" cellpadding="0">

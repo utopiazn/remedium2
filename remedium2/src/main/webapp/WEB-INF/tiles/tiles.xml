@@ -24,19 +24,45 @@
 	
 	
 	
-	
+	<!-- 로그인 폼 -->
 	<definition name="loginForm" extends="main2">
-		<put-attribute name="body" value="/WEB-INF/login/loginForm.jsp" />
+		<put-attribute name="body" value="/WEB-INF/member/loginForm.jsp" />
 	</definition>
 	
+	<!-- 아이디 찾기 폼 -->
+	<definition name="findIdForm" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/member/findID.jsp" />
+	</definition>
+	
+	<!-- 아이디 찾기 완료 -->
+	<definition name="findIdSuccess" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/member/findIDSuccess.jsp" />
+	</definition>
+	
+	<!-- 비밀번호 찾기 폼 -->
+	<definition name="findPwForm" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/member/findPw.jsp" />
+	</definition>
+	
+	<!-- 비밀번호 찾기 완료 -->
+	<definition name="findPwSuccess" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/member/findPwSuccess.jsp" />
+	</definition>
+	
+	<!-- 아이디,비번 찾기 오류 -->
+	<definition name="findError" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/member/findError.jsp" />
+	</definition>
+	
+	<!-- 회원 수정 폼 -->
 	<definition name="modifyForm" extends="main2">
-		<put-attribute name="body" value="/WEB-INF/login/modifyForm.jsp" />
+		<put-attribute name="body" value="/WEB-INF/member/modifyForm.jsp" />
 	</definition>
 	
 		
 	<!-- 회원가입폼 -->
  	<definition name="joinForm" extends="main2">
-		<put-attribute name="body" value="/WEB-INF/join/joinForm.jsp" />
+		<put-attribute name="body" value="/WEB-INF/member/joinForm.jsp" />
 	</definition>
 	
 	<!--호텔 인포 -->
