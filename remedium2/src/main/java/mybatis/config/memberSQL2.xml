@@ -28,5 +28,30 @@
 			#{addr2},0, 0 )
 		]]>
 	</insert>
+	
+		<!-- 캐쉬 충전 -->
+	<update id="updateCash" parameterType="hashmap">
+	 <![CDATA[
+	 update 
+	 	member
+	 set
+	 	cash = cash + #{cash}
+	 where
+	 	memberID = #{memberId}
+	 	]]>
+	</update>
+	
+
+	<!-- 캐쉬 결제 -->
+	<update id="pay" parameterType="hashmap">
+	 <![CDATA[
+	 update
+	 	 member 
+	  set 
+	  	cash = #{cash}
+	  where 
+	  	memberID = #{memberId}
+	  	]]>
+	</update>
 
 </mapper>

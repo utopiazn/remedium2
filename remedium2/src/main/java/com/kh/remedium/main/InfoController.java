@@ -28,13 +28,13 @@ public class InfoController {
 		
 		ModelAndView mav = new ModelAndView("main2");
 		
-		List<Map<String, Object>> list = infoService.selectAll(commandMap.getMap());
+		/*List<Map<String, Object>> list = infoService.selectAll(commandMap.getMap());
 		
 		
-		mav.setViewName("info", info);
+		mav.setViewName("info", info);*/
 		
 		
-		System.out.println("in);
+		System.out.println("info");
 		return mav;
 	}
 
