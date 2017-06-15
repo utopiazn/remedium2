@@ -29,9 +29,9 @@
 	<c:choose>
 	<c:when test="${memberId != null}"> <!-- 아이디가 null이 아닌 경우 -->
 	
-	<a href="myPageMain" style="color: white;">마이페이지</a>
+	<a href="/remedium/myPageMain" style="color: white;">마이페이지</a>
 	&nbsp;
-	<a href="logout" style="color: white;">로그아웃</a>
+	<a href="/remedium/logout" style="color: white;">로그아웃</a>
 	&nbsp;
 	<br/>
 	${memberName} 로그인 하셨습니다.
@@ -39,9 +39,9 @@
 	Cash point: ${cash}
 	</c:when>
 	<c:otherwise>
-	<a href="joinForm" style="color: white;">회원가입</a>
+	<a href="/remedium/joinForm" style="color: white;">회원가입</a>
 	&nbsp;
-	<a href="login" style="color: white;">로그인</a>
+	<a href="/remedium/login" style="color: white;">로그인</a>
 	&nbsp;
 	</c:otherwise>
 	</c:choose>
@@ -62,9 +62,9 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="/remedium/facility/list" style="color: white;">Facility</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="eventList" style="color: white;">Event</a>
+    <a href="/remedium/eventList" style="color: white;">Event</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="boardList.action" style="color: white;">QnA</a>
+    <a href="/remedium/board/boardList" style="color: white;">QnA</a>
 </div>
 </c:when>
 <c:otherwise>
@@ -72,13 +72,13 @@
 	<a href="/remedium/info" style="color: white;">Remedium</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <!-- <a href="roomInfoView.action?room_class='1'">객실 소개   </a> -->
-    <a href="roomInfoView.action?roomClass=1" style="color: white;">Room</a>
+    <a href="/remedium/room/roomInfoView?roomClass=1" style="color: white;">Room</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="/remedium/facility/list" style="color: white;">Facility</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="/remedium/eventList" style="color: white;">Event</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="boardList.action" style="color: white;">QnA</a>
+    <a href="/remedium/board/boardList" style="color: white;">QnA</a>
 </div>
 </c:otherwise>
 </c:choose>

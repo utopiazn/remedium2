@@ -26,6 +26,7 @@
 	    <mapper resource="mybatis/config/memberSQL.xml" />
 	    <mapper resource="mybatis/config/memberSQL2.xml" />
 	    <mapper resource="mybatis/config/facilitiesSQL.xml" />
-	    <mapper resource="mybatis/config/roomClassSQL.xml" />	  
+	    <mapper resource="mybatis/config/roomClassSQL.xml" />	 
+	     <mapper resource="mybatis/config/boardSQL.xml" /> 
 	</mappers> 
 </configuration> 
