@@ -114,7 +114,7 @@ a {
 			<tr>
 				<td align="right" colspan="4"></td>
 			</tr>
-			<img height="400" alt="이벤트사진"
+			<img height="400" width="600" alt="이벤트사진"
 				src="/remedium/resources/image/eventImage/${list.IMAGE}">
 
 			<tr>
