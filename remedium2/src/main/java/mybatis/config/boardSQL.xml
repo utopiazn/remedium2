@@ -40,21 +40,21 @@
 	<!-- 문의사항 게시판 추가 -->
 	<insert id="insertBoard" parameterType="hashmap">
 		   insert into board (no, subject, memberID, name, content, type, re_step, regdate, ref)
-		VALUES (BOARD_NO_SEQ.nextval, #{subject}, #{memberID}, #{name}, #{content}, #{type}, #{re_step}, sysdate, BOARD_NO_SEQ.currval)	 	 	
+		VALUES (BOARD_NO_SEQ.nextval, #{subject}, #{memberId}, #{memberName}, #{content}, 0, 0, sysdate, BOARD_NO_SEQ.currval)	 	 	
 	</insert>
 	
 	<!-- 문의사항 게시판 답변 추가 -->
 	<insert id="insertReplyBoard" parameterType="hashmap">
 		   insert into board (no, subject, memberID, name, content, ref, re_step, regdate, type)
-		VALUES (BOARD_NO_SEQ.nextval, #{subject}, #{memberID}, #{name}, #{content}, #{ref}, #{re_step}, sysdate, #{type})	 	 	
+		VALUES (BOARD_NO_SEQ.nextval, #{subject}, #{memberID}, #{memberName}, #{content}, #{ref}, #{re_step}, sysdate, #{type})	 	 	
 	</insert>
 	
-	<!-- 문의사항 게시판 수정 -->
+	<!-- 문의사항 게시판 수정 --> 
 	<update id="updateBoard" parameterType="hashmap">
-		update board set subject = #{subject}, content = #{content}
-		<include refid="where-boardNo" />
+		update board set subject = #{subject}, content = #{content} where no = #{no}
+	<!-- 	<include refid="where-boardNo" /> -->
 	</update>
-	
+	 
 	<!-- 문의사항 게시판 타입 수정 -->
 	<update id="updateType" parameterType="hashmap">
 		update board set type = #{type} where ref = #{ref}

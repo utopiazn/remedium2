@@ -1,5 +1,7 @@
-<%@ page contentType="text/html; charset=UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -58,7 +60,8 @@ text-align: center;
 <body>
 <div class="event">
 	<table width="700" border="0" cellspacing="0" cellpadding="2" align="center">
-		<s:if test="resultClass == NULL">
+	 <c:if test="${fn:length(board) == 0}" > 
+		 
 		<tr>
   			<td align="center" ><h2>문의 글 쓰기</h2>
   			<hr align="center" width="50%" size="1" color="gray">
@@ -69,10 +72,12 @@ text-align: center;
 	</table>
 	
 
-		<form action="boardWrite.action" method="post" enctype="multipart/form-data" onsubmit="return validation(this);">
-	</s:if>
+		<form action="boardWrite" method="post"  onsubmit="return validation(this);">
+			<input type="hidden" name="memberId" value="${memberId }"/>
+			<input type="hidden" name="memberName" value="${memberName }"/>
+ 	 </c:if> 
 	
-	<s:elseif test="reply">
+	<!-- <s:elseif test="reply">
 		<tr>
   			<td align="center" ><h2>문의 글 답변</h2>
   			<hr align="center" width="50%" size="1" color="gray">
@@ -84,32 +89,30 @@ text-align: center;
 		<form action="boardReply.action" method="post" enctype="multipart/form-data" onsubmit="return validation(this);">
 			<s:hidden name="ref" value="%{resultClass.ref}" />
 			<s:hidden name="re_step" value="%{resultClass.re_step}" />
-	</s:elseif>
+	</s:elseif><-->
 	
-	<s:else>
+	<c:if test="${fn:length(board) > 0}" >
 		<tr>
   			<td align="center" ><h2>문의 글 수정</h2>
   			<hr align="center" width="50%" size="1" color="gray">
   			<br/>
-  			</td>
-  			
+  			</td> 			
   		</tr>
 	</table>
 		<form action="boardModify.action" method="post" enctype="multipart/form-data">
-			<s:hidden name="no" value="%{resultClass.no}" />
-			<s:hidden name="name" value="%{resultClass.name}" />
-			<s:hidden name="currentPage" value="%{currentPage}" />
-	</s:else> 
+			<input type="hidden" name="no" value="${board.NO }"/>
+			
+	</c:if>  
 	
 	<table width="700" border="0" cellspacing="0" cellpadding="0" align="center" style="width: 523px;">
-	
+		
 		
 		<tr bgcolor="#777777">
 			<td height="1" colspan="2"></td>
 		</tr>
 		<tr>
 			<td width="100" bgcolor="#202f58"><font color="white">작성자</font></td>
-			<td align="left" width="300" bgcolor="#FFFFFF">   &nbsp; ${session.memberName}</td>
+			<td align="left" width="300" bgcolor="#FFFFFF">  &nbsp; ${memberName}</td>
 		</tr>
 		<tr bgcolor="#777777">
 			<td height="1" colspan="2"></td>
@@ -118,7 +121,7 @@ text-align: center;
 		<tr>
 			<td width="100" bgcolor="#202f58"><font color="white">제 목</font></td>
 			<td align="left" width="500" bgcolor="#FFFFFF">
-			  &nbsp; <s:textfield name="subject" theme="simple" value="%{resultClass.subject}" cssStyle="width:372px" maxlength="50"/>
+			  &nbsp; <input type="text" name="subject"  value="${board.SUBJECT }" Style="width:372px" maxlength="50"/>
 			</td>
 		</tr>
 		
@@ -128,8 +131,8 @@ text-align: center;
 		<tr>
 			<td bgcolor="#202f58"><font color="white">내 용</font></td>
 			<td class="td" align="left" bgcolor="#FFFFFF">
-			&nbsp; <s:textarea name="content" theme="simple" value="%{resultClass.content}" cols="56" rows="10"/>
-			</td>
+			&nbsp; <textarea name="content" cols="60" rows="15" >${board.CONTENT }</textarea>
+			</td>	
 		</tr>
 		<tr bgcolor="#777777">
 			<td height="1" colspan="2"></td>
@@ -142,7 +145,7 @@ text-align: center;
 		<tr>
      		<td align="right" colspan="2">
      		   <input type="submit" value="작성완료" class="button">
-     		    <input name="list" type="button" value="글목록" class="button" onClick="javascript:location.href='boardList.action'">
+     		    <input name="list" type="button" value="글목록" class="button" onClick="javascript:location.href='boardList'">
       		</td>
         </tr>	
 	</table>

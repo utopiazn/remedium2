@@ -11,9 +11,18 @@ public class BoardDAO extends AbstractDAO {
 	public void insert(Map<String,Object> map) {
 		insert("board.insertBoard", map);
 	}
+	
+	public void insertReply(Map<String,Object> map) {
+		insert("board.insertReply", map);
+	}
 
 	public void update(Map<String,Object> map) {
+		
 		update("board.updateBoard", map);
+	}
+	
+	public void updateType(Map<String,Object> map) {
+		update("board.updateType", map);
 	}
 
 	public void delete(Map<String,Object> map) {

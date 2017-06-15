@@ -32,10 +32,18 @@ public class BoardServiceImpl implements BoardService {
 		boardDAO.insert(map);
 		
 	}
+	
+	@Override
+	public void insertReplyBoard(Map<String, Object> map) throws Exception {
+		boardDAO.insertReply(map);
+		boardDAO.updateType(map);
+		
+	}
 
 	@Override
 	public void updateBoard(Map<String, Object> map) throws Exception {
 		boardDAO.update(map);
+		System.out.println("Service"+map.get(0));
 		
 	}
 
