@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cashSQL">
+
+<!-- 캐쉬 충전 -->
+<update id="updateCash" parameterType="hashmap">
+ 
+ update 
+ 	member
+ set
+ 	cash = cash + #{cash}
+ where
+ 	memberID = #{memberID}
+</update>
+
+
+<!-- 캐쉬 결제 -->
+<update id="pay" parameterType="hasmap">
+
+ update
+ 	 member 
+  set 
+  	cash = #{cash}
+  where 
+  	memberID = #{memberID}
+</update>
+
+
+
+</mapper>
