@@ -1,27 +1,17 @@
 package com.kh.remedium.main;
 
-import java.util.List;
-import java.util.Map;
-
-import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+
 
 import com.kh.remedium.common.CommandMap;
 
 @Controller
-
 public class InfoController {
 	
-	Logger log = Logger.getLogger(this.getClass());
-	
-	ModelAndView mav = new ModelAndView();
-	
-	
-	
-	
+
 	@RequestMapping(value="/info")
+<<<<<<< HEAD
 	public ModelAndView info(CommandMap commandMap) throws Exception{
 		
 		System.out.println("인포");
@@ -37,5 +27,14 @@ public class InfoController {
 		System.out.println("info");
 		return mav;
 	}
+=======
+	public String info(CommandMap commandMap) throws Exception{
+		
+		
+	
+		
+		return "info";
+>>>>>>> 10e4b170f4f2ce2231f9a713abc4a5c0a27193e8
 
+	}
 }
