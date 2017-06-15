@@ -141,6 +141,11 @@
 	<definition name="boardView" extends="main2">
 		<put-attribute name="body" value="/WEB-INF/board/boardView.jsp" />
 	</definition>	
+	
+		<!-- 문의사항 상세보기 -->
+	<definition name="boardWriteForm" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/board/boardWriteForm.jsp" />
+	</definition>	
 			
 	
 	<!-- 객실소개 -->   

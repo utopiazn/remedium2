@@ -69,7 +69,7 @@
 </div>
 </c:when>
 <c:otherwise>
-<div id="menu">
+<div id="menu" style="padding-right: 275px;">
 	<a href="/remedium/info" style="color: white;">Remedium</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <!-- <a href="roomInfoView.action?room_class='1'">객실 소개   </a> -->
