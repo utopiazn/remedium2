@@ -66,51 +66,37 @@
 <!-- <body style="background-color: black;" > -->
 <body>
 
-
 <c:choose>
 
-	<c:when test="${list.size() <= 0}"> <!-- 아이디가 null이 아닌 경우 -->
+	<c:when test="${list == null}"> 
 			
 		객실 클래스 정보가 없습니다		
-	</c:when>	
+	</c:when>
 	
-	
-	<c:when test='${userAdmin.equals("1")}'> <!-- 아이디가 null이 아닌 경우 -->
+	<c:when test="${userAdmin eq  '1' }"> <!-- 아이디가 null이 아닌 경우 -->
 			
 		<div id="navi2">
 			<h2>
-				<a href="/remedium/room/roomInfoList?roomClass=0" >객실 소개  관리 </a>
+				 <a href="/remedium/room/roomInfoList?roomClass=0" >객실 소개  관리 </a>
 			</h2>
 		</div>
-	</c:when>		
-					
-
-<s:else>
+	</c:when>
 	
-	<s:if test='%{ session.userAdmin.equals("1") }'>
-	
-		<div id="navi2">
-			<h2>
-				<a href="/remedium/room/roomInfoList?roomClass=0" >객실 소개  관리 </a>
-			</h2>
-		</div>
 		
-	</s:if>
-	
-	<s:iterator value="list">
-	
-		<div id="navi2">
+		
+		
+</c:choose>
+
+
+    <c:forEach items="${list }" var="row">
+    
+       	<div id="navi2">
 			<h2>
-				 <a href='roomInfoView.action?roomClass=<s:property value="room_class"/>'><s:property value="name"/></a>
+				 <a href='roomInfoView.action?roomClass=${row.ROOM_CLASS }'>${row.NAME }</a>
 			</h2>
 		</div>
 	
-	</s:iterator>
-	
-</s:else>
+    </c:forEach>
 
-
-</c:choose>
- 
 </body>
 </html>
