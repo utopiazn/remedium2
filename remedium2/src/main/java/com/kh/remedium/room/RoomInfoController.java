@@ -26,7 +26,9 @@ public class RoomInfoController {
 	Logger log = Logger.getLogger(this.getClass());
 	
 
-	ModelAndView mav = new ModelAndView();
+	//ModelAndView mav = new ModelAndView();
+	
+	List<Map<String, Object>> list;
 	
 	@Resource(name="roomInfoService")	
 	private RoomInfoService roomInfoService;
@@ -52,16 +54,19 @@ public class RoomInfoController {
 	@RequestMapping(value="/roomInfoView")
 	public ModelAndView roomInfoView(CommandMap commandMap,@ModelAttribute("roomClass") int roomClass) throws Exception{
 
-		
+		ModelAndView mav = new ModelAndView();
 
 		System.out.println("롬정보 패이지로 이동");
 		
 		commandMap.toString();
-		//ModelAndView mav = new ModelAndView("roomInfoView");
+
+
 		
-		List<Map<String, Object>> list = roomInfoService.selectAll(commandMap.getMap());
 		
-	
+		
+		//왼쪽 메뉴 로드
+		lefterMenu(commandMap);
+		
 		
 		 Map<String, Object> subList = list.get(roomClass);
 		 System.out.println(roomClass);
@@ -72,14 +77,35 @@ public class RoomInfoController {
 		mav.addObject("list",list);
 		
 		
-	
-		
 		
 		mav.setViewName("roomInfoView");
 		System.out.println("roomClass :"+ commandMap.get("roomClass"));	
 		
 		
 		return mav;
+	}
+		
+	public void lefterMenu(CommandMap commandMap) throws Exception{
+			
+		list.clear();		
+		
+		list = roomInfoService.selectAll(commandMap.getMap());		
+		
+	}
+	
+	
+	
+
+	@RequestMapping(value="/roomInfoView3")
+	public ModelAndView roomInfoView3(CommandMap commandMap) throws Exception{
+
+		ModelAndView mav2 = new ModelAndView();
+		
+		mav2.addObject("list",list);
+		
+		
+		mav2.setViewName("roomInfoView");
+		return mav2;
 	}
 	
 	
