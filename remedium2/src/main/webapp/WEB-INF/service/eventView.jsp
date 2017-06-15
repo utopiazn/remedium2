@@ -41,7 +41,7 @@ a {
 </head>
 <body>
 	<div class="event">
-		<table width="600" border="0" cellspacing="0" cellpadding="2"
+		<table width=700 border="0" cellspacing="0" cellpadding="2"
 			align="center">
 			<tr>
 				<td align="center"><h2>EVENT * PROMOTION</h2></td>
@@ -51,7 +51,7 @@ a {
 			</tr>
 		</table>
 
-		<table width="600" border="0" cellspacing="0" cellpadding="0"
+		<table width="700" border="0" cellspacing="0" cellpadding="0"
 			align="center">
 
 			<tr bgcolor="#777777">
@@ -96,7 +96,7 @@ a {
 			<tr>
 				<td bgcolor="#202f58"><font color="white"> 이벤트 종료 </font></td>
 				<td bgcolor="#FFFFFF">&nbsp;&nbsp;${list.LASTDATE}</td>
-			</tr>
+			</tr> 
 			<tr bgcolor="#777777">
 				<td height="1" colspan="4"></td>
 			</tr>
@@ -114,7 +114,7 @@ a {
 			<tr>
 				<td align="right" colspan="4"></td>
 			</tr>
-			<img height="400" width="600" alt="이벤트사진"
+			<img height="400" width="700" alt="이벤트사진"
 				src="/remedium/resources/image/eventImage/${list.IMAGE}">
 
 			<tr>
