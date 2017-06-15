@@ -6,7 +6,7 @@
 	
 	<sql id ="select-all">
 	<![CDATA[
-	select * from event
+	select no, name, content, to_char(firstdate) as firstdate, to_char(lastdate) as lastdate, image from event
 		]]>
 	</sql>
 	

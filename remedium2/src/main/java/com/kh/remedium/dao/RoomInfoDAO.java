@@ -19,9 +19,8 @@ public class RoomInfoDAO extends AbstractDAO{
 			 Map<String, Object> sd = list.get(i);
 			 
 			 
-			 
-			 System.out.println("dddff:"+sd.get("NAME"));
-			 
+				 System.out.println("dddff:"+sd.get("NAME"));
+			
 			 //sd.put("NAME", "dddd");
 			 
 			 //System.out.println("dddff2:"+sd.get("NAME"));

@@ -91,6 +91,9 @@
 </head>
 <body>
 
+ <a href='roomInfoView3?roomClass=2'>DDDDD</a>
+
+
 뷰
 
 <%-- 
