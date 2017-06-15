@@ -59,8 +59,10 @@ text-align: center;
 
 <body>
 <div class="event">
+
 	<table width="700" border="0" cellspacing="0" cellpadding="2" align="center">
-	 <c:if test="${fn:length(board) == 0}" > 
+<c:choose>
+	 <c:when test="${fn:length(board) == 0}" > 
 		 
 		<tr>
   			<td align="center" ><h2>문의 글 쓰기</h2>
@@ -75,9 +77,9 @@ text-align: center;
 		<form action="boardWrite" method="post"  onsubmit="return validation(this);">
 			<input type="hidden" name="memberId" value="${memberId }"/>
 			<input type="hidden" name="memberName" value="${memberName }"/>
- 	 </c:if> 
+ 	 </c:when> 
 	
-	<!-- <s:elseif test="reply">
+	 <c:when test="${board.CONTENT eq null}">
 		<tr>
   			<td align="center" ><h2>문의 글 답변</h2>
   			<hr align="center" width="50%" size="1" color="gray">
@@ -87,11 +89,13 @@ text-align: center;
   		</tr>
 	</table>
 		<form action="boardReply.action" method="post" enctype="multipart/form-data" onsubmit="return validation(this);">
-			<s:hidden name="ref" value="%{resultClass.ref}" />
-			<s:hidden name="re_step" value="%{resultClass.re_step}" />
-	</s:elseif><-->
+			<input type="hidden" name="ref" value="${board.REF }" />
+			<input type="hidden" name="re_step" value="${board.RE_STEP }" />
+			<input type="hidden" name="memberId" value="${memberId }"/>
+			<input type="hidden" name="memberName" value="${memberName }"/>
+	</c:when>
 	
-	<c:if test="${fn:length(board) > 0}" >
+	<c:otherwise> <%-- test="${fn:length(board) > 3}"  --%> 
 		<tr>
   			<td align="center" ><h2>문의 글 수정</h2>
   			<hr align="center" width="50%" size="1" color="gray">
@@ -102,8 +106,8 @@ text-align: center;
 		<form action="boardModify.action" method="post" enctype="multipart/form-data">
 			<input type="hidden" name="no" value="${board.NO }"/>
 			
-	</c:if>  
-	
+	</c:otherwise>  
+</c:choose>	
 	<table width="700" border="0" cellspacing="0" cellpadding="0" align="center" style="width: 523px;">
 		
 		
@@ -131,7 +135,7 @@ text-align: center;
 		<tr>
 			<td bgcolor="#202f58"><font color="white">내 용</font></td>
 			<td class="td" align="left" bgcolor="#FFFFFF">
-			&nbsp; <textarea name="content" cols="60" rows="15" >${board.CONTENT }</textarea>
+			&nbsp; <textarea name="content" cols="60" rows="15">${board.CONTENT }</textarea>
 			</td>	
 		</tr>
 		<tr bgcolor="#777777">

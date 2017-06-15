@@ -63,21 +63,7 @@ public class BoardController {
 	
 	@RequestMapping(value="/boardWrite", method=RequestMethod.POST)
 	public ModelAndView boardWrite(CommandMap commandMap) throws Exception {
-		
-	/*	if(commandMap.get("ref").equals(0)){
-			commandMap.put("re_step", 0);
-			commandMap.put("type", "0");
-			boardService.insertBoard(commandMap.getMap());
-		}
-		
-		else {
-			commandMap.put("re_step", +1);
-			System.out.println(commandMap.get("re_step"));
-			commandMap.put("type", "1");
-			boardService.insertReplyBoard(commandMap.getMap());
-		}*/
-		commandMap.toString();
-		
+	
 		boardService.insertBoard(commandMap.getMap());
 		
 		mav.setViewName("redirect:/board/boardList");
@@ -86,7 +72,7 @@ public class BoardController {
 		
 	}
 	
-	@RequestMapping(value="boardModify", method=RequestMethod.GET)
+	@RequestMapping(value="/boardModify", method=RequestMethod.GET)
 	public ModelAndView boardModify(CommandMap commandMap) throws Exception {
 		
 		Map<String,Object> map = boardService.selectOne(commandMap.getMap());
@@ -98,10 +84,10 @@ public class BoardController {
 		
 	}
 	
-	@RequestMapping(value="boardModify", method=RequestMethod.POST)
+	@RequestMapping(value="/boardModify", method=RequestMethod.POST)
 	public ModelAndView boardModify(CommandMap commandMap, int no) throws Exception {
 		
-		commandMap.toString();
+	
 		
 		boardService.updateBoard(commandMap.getMap());
 		
@@ -110,7 +96,7 @@ public class BoardController {
 		return mav;
 	}
 	
-	@RequestMapping(value="boardView")
+	@RequestMapping(value="/boardView")
 	public ModelAndView boardView(CommandMap commandMap) throws Exception {
 		
 		Map<String,Object> map = boardService.selectOne(commandMap.getMap());
@@ -121,6 +107,64 @@ public class BoardController {
 		return mav;
 		
 	}
+	
+	@RequestMapping(value="/boardDelete")
+	public ModelAndView boardDelete(CommandMap commandMap, int re_step) throws Exception {
+		
+		System.out.println("restep"+re_step);
+		
+		if(re_step != 0){
+			System.out.println("restep"+re_step);
+			boardService.deleteReply(commandMap.getMap());
+		}
+		
+		else {
+			boardService.deleteBoard(commandMap.getMap());
+		}
+		
+		mav.setViewName("redirect:/board/boardList");
+		
+		return mav;
+	}
+	
+	@RequestMapping(value="/boardReply", method=RequestMethod.GET)
+	public ModelAndView boardReply(CommandMap commandMap) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		Map<String,Object> map = boardService.selectOne(commandMap.getMap());
+		
+	
+		System.out.println("map"+map.size());
+		
+	/*	map.put("content", "");
+		map.put("subject", "Re :"+subject);*/
+		
+		map.remove("CONTENT");
+		
+		
+		mav.addObject("board", map);
+		mav.setViewName("boardWriteForm");
+		
+		return mav;
+	}
+	
+	@RequestMapping(value="/boardReply", method=RequestMethod.POST)
+	public ModelAndView boardReply(CommandMap commandMap, String subject) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		
+		commandMap.toString();
+		
+		commandMap.put("subject", "    Re : "+ subject);
+		
+		commandMap.toString();
+		boardService.insertReplyBoard(commandMap.getMap());  
+		
+		mav.setViewName("redirect:/board/boardList");
+		
+		return mav;
+		
+	}
+	
+	
 	
 	
 }

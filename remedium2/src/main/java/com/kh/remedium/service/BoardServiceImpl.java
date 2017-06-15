@@ -43,7 +43,7 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public void updateBoard(Map<String, Object> map) throws Exception {
 		boardDAO.update(map);
-		System.out.println("Service"+map.get(0));
+		
 		
 	}
 
@@ -53,4 +53,9 @@ public class BoardServiceImpl implements BoardService {
 		
 	}
 	
+	@Override
+	public void deleteReply(Map<String, Object> map) throws Exception {
+		boardDAO.deleteReply(map);
+		
+	}
 }
