@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="board">
+	
+	<sql id="select-all">
+		select no, subject, memberID, name, content, ref, re_step, type, TO_CHAR(regdate) as regdate from board
+		
+	</sql>
+	
+	<sql id="where-boardNo">
+		 where no = #{no}
+	</sql>
+	
+	<select id="selectAll" resultType="hashmap">
+		<include refid="select-all" />
+		ORDER BY ref DESC, re_step ASC 
+	</select>
+	
+	<!-- 문의사항 게시판 개별 호출 -->
+	<select id="selectOne" resultType="hashmap" parameterType="hashmap">
+		<include refid="select-all" /> 
+		<include refid="where-boardNo" />
+	</select>
+	
+	<!-- 문의사항 게시판 이름 검색 -->
+	<select id="selectName" resultType="hashmap" parameterType="hashmap">
+		<include refid="select-all" />
+		 WHERE name like #{searchKeyword}
+			ORDER BY ref DESC, re_step ASC
+	</select>
+	
+	<!-- 문의사항 게시판 제목 검색 -->
+	<select id="selectSubject" resultType="hashmap" parameterType="hashmap">
+		<include refid="select-all" />
+		 WHERE subject like #{searchKeyword}
+		 	ORDER BY ref DESC, re_step ASC
+	</select>
+	
+	<!-- 문의사항 게시판 추가 -->
+	<insert id="insertBoard" parameterType="hashmap">
+		   insert into board (no, subject, memberID, name, content, type, re_step, regdate, ref)
+		VALUES (BOARD_NO_SEQ.nextval, #{subject}, #{memberID}, #{name}, #{content}, #{type}, #{re_step}, sysdate, BOARD_NO_SEQ.currval)	 	 	
+	</insert>
+	
+	<!-- 문의사항 게시판 답변 추가 -->
+	<insert id="insertReplyBoard" parameterType="hashmap">
+		   insert into board (no, subject, memberID, name, content, ref, re_step, regdate, type)
+		VALUES (BOARD_NO_SEQ.nextval, #{subject}, #{memberID}, #{name}, #{content}, #{ref}, #{re_step}, sysdate, #{type})	 	 	
+	</insert>
+	
+	<!-- 문의사항 게시판 수정 -->
+	<update id="updateBoard" parameterType="hashmap">
+		update board set subject = #{subject}, content = #{content}
+		<include refid="where-boardNo" />
+	</update>
+	
+	<!-- 문의사항 게시판 타입 수정 -->
+	<update id="updateType" parameterType="hashmap">
+		update board set type = #{type} where ref = #{ref}
+	</update>
+	
+	<!-- 문의사항 게시판 삭제 -->
+	<delete id="deleteBoard" parameterType="hashmap">
+		delete from board where ref = #{ref}
+	</delete>
+	
+	<!-- 문의사항 게시판 답변 삭제 -->
+	<delete id="deleteReply" parameterType="hashmap">
+		delete from board where no = #{no}
+	</delete>
+	
+	
+</mapper>

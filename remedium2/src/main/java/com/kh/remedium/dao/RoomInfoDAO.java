@@ -12,7 +12,22 @@ public class RoomInfoDAO extends AbstractDAO{
 	@SuppressWarnings("unchecked")
 	public List<Map<String, Object>> selectAll(Map<String, Object> map) throws Exception {
 		
-		return (List<Map<String, Object>>)selectList("roomclassSQL.selectAll", map);  
+		List<Map<String, Object>> list= (List<Map<String, Object>>)selectList("roomclassSQL.selectAll", map);  
+		
+		for(int i=0; i< list.size();i++){
+		
+			 Map<String, Object> sd = list.get(i);
+			 
+			 
+			 
+			 System.out.println("dddff:"+sd.get("NAME"));
+			 
+			 //sd.put("NAME", "dddd");
+			 
+			 //System.out.println("dddff2:"+sd.get("NAME"));
+		}
+		
+		return list;  
 		
 	}
 	

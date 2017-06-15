@@ -11,7 +11,14 @@
 	<select id="selectAll"  resultType="hashmap">
 		<![CDATA[
 		
-			select * from room_class 
+			select 
+				ROOM_CLASS, 
+				IMAGE, 
+				CONTENT, 
+				IMAGE2, 
+				NAME 
+			 from 
+			 	room_class 
 			order by 
 				room_class asc
 		
@@ -25,9 +32,15 @@
 	<!-- <select id="selectRoomClass" resultMap="roomclassRes"> -->	
 	<select id="selectRoomClass" parameterType="hashmap" resultType="hashmap">
 		<![CDATA[
-	
-		select * from room_class where room_class = #{room_class}
-			
+		
+			select 
+				ROOM_CLASS, 
+				IMAGE, 
+				CONTENT, 
+				IMAGE2, 
+				NAME  
+			from room_class where room_class = #{room_class}
+				
 		]]>
 	</select>
 
