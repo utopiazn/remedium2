@@ -93,7 +93,7 @@ text-align: center;
 				</td>
 			
 				<td colspan="3" align="left" height="300" width="500" bgcolor="#FFFFFF" style="vertical-align: top;">
-				&nbsp;${board.CONTENT }				
+				&nbsp; ${board.CONTENT }				
 				</td>
 			</tr>
 		

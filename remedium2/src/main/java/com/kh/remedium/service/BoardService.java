@@ -17,4 +17,6 @@ public interface BoardService {
 	
 	void insertReplyBoard(Map<String,Object> map) throws Exception;
 	
+	void deleteReply(Map<String,Object> map) throws Exception;
+	
 }

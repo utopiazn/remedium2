@@ -13,7 +13,7 @@ public class BoardDAO extends AbstractDAO {
 	}
 	
 	public void insertReply(Map<String,Object> map) {
-		insert("board.insertReply", map);
+		insert("board.insertReplyBoard", map);
 	}
 
 	public void update(Map<String,Object> map) {
@@ -27,6 +27,10 @@ public class BoardDAO extends AbstractDAO {
 
 	public void delete(Map<String,Object> map) {
 		delete("board.deleteBoard", map);
+	}
+	
+	public void deleteReply(Map<String,Object> map) {
+		delete("board.deleteReply", map);
 	}
 	
 	@SuppressWarnings("unchecked")

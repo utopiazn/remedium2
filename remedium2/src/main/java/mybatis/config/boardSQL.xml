@@ -45,8 +45,10 @@
 	
 	<!-- 문의사항 게시판 답변 추가 -->
 	<insert id="insertReplyBoard" parameterType="hashmap">
+	<![CDATA[
 		   insert into board (no, subject, memberID, name, content, ref, re_step, regdate, type)
-		VALUES (BOARD_NO_SEQ.nextval, #{subject}, #{memberID}, #{memberName}, #{content}, #{ref}, #{re_step}, sysdate, #{type})	 	 	
+		VALUES (BOARD_NO_SEQ.nextval, #{subject}, #{memberId}, #{memberName}, #{content}, #{ref}, #{re_step}+1, sysdate, 1)	 	 	
+	]]>
 	</insert>
 	
 	<!-- 문의사항 게시판 수정 --> 
@@ -57,7 +59,7 @@
 	 
 	<!-- 문의사항 게시판 타입 수정 -->
 	<update id="updateType" parameterType="hashmap">
-		update board set type = #{type} where ref = #{ref}
+		update board set type = 1 where ref = #{ref}
 	</update>
 	
 	<!-- 문의사항 게시판 삭제 -->

@@ -69,7 +69,7 @@
 
 		<div id="navi3">
 			<h2>
-				<a href="boardList.action" >문의 게시판 </a>
+				<a href="boardList" >문의 게시판 </a>
 			</h2>
 		</div>
 		
@@ -77,7 +77,7 @@
 		
 		<div id="navi3">
 			<h2>
-				<a href="faqList.action" >자주 묻는 질문 </a>
+				<a href="faqList" >자주 묻는 질문 </a>
 			</h2>
 		</div>
 		
