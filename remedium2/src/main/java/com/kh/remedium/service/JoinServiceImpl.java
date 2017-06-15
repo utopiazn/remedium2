@@ -1,5 +1,6 @@
 package com.kh.remedium.service;
 
+import java.util.List;
 import java.util.Map;
 
 
@@ -25,4 +26,21 @@ public class JoinServiceImpl implements JoinService {
         // TODO Auto-generated method stub
     	joinDAO.insert(map);
     }
+
+	@Override
+	public void update(Map<String, Object> map) throws Exception {
+		// TODO Auto-generated method stub
+		joinDAO.update(map);
+		
+	}
+
+	@Override
+	public List<Map<String, Object>> selectAll(Map<String, Object> map) throws Exception {
+		// TODO Auto-generated method stub
+		return joinDAO.selectAll(map);
+	}  
+	
+	
+      
+    
 }

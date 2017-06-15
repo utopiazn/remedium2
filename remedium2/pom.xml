@@ -25,7 +25,7 @@
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
-		</repository>
+		</repository> 
 		
 		<repository>
 			<id>egovframe</id>
@@ -43,8 +43,6 @@
 		    <id>mesir-repo</id>
 		    <url>http://mesir.googlecode.com/svn/trunk/mavenrepo</url>
 		</repository>
-	
-		 
 	</repositories>
 	
 	

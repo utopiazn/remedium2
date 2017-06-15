@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="event">
+
+	
+	<sql id ="select-all">
+	<![CDATA[
+	select * from event
+		]]>
+	</sql>
+	
+	<sql id ="where-no">
+	<![CDATA[
+	WHERE no = #{no}
+		]]>
+	</sql>
+	
+	<!-- event 테이블 모든 정보를 가져옴 -->
+	<select id = "selectAll" resultType="hashmap" >
+	
+	<include refid="select-all"/>
+	</select>
+	
+	<!-- 이벤트 개별 뷰 -->
+	<select id="selectOne" resultType="hashmap">
+	<include refid="select-all"/>
+	<include refid="where-no"/>
+	</select>
+	
+	<!--이벤트 입력-->
+			
+	<insert id="insertEvent" parameterType="hashmap">
+	<![CDATA[
+	INSERT INTO EVENT (NO, NAME, CONTENT, FIRSTDATE, LASTDATE, image) 
+		VALUES (event_no_seq.nextval, #{name}, #{content}, #{firstdate}, #{lastdate}, #{image})
+		]]>
+	</insert>
+	
+	<!-- 이벤트 수정 -->
+	<update id="updateEvent" parameterType="hashmap">
+	<![CDATA[
+	UPDATE EVENT SET NAME = #{name}, CONTENT = #{content}, FIRSTDATE = #{firstdate}, LASTDATE = #{lastdate}, image = #{image}
+		]]>
+	<include refid="where-no"/>
+	
+	</update>
+	
+	<!-- 이벤트 삭제 -->
+	<delete id="deleteEvent" parameterType="hashmap">
+	<![CDATA[
+	DELETE EVENT
+		]]>
+	<include refid="where-no"/>
+	</delete>
+	
+	
+
+	
+</mapper>
