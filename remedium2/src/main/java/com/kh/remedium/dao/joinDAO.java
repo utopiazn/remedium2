@@ -20,23 +20,24 @@ public class joinDAO extends AbstractDAO{
 	
 	@SuppressWarnings("unchecked")
 	public List<Map<String, Object>> selectAll(Map<String, Object> map) throws Exception {
-		
-		List<Map<String, Object>> list= (List<Map<String, Object>>)selectList("memberSQL.selectAll", map);  
-		
-		for(int i=0; i< list.size();i++){
-		
-			 Map<String, Object> sd = list.get(i);
-			 
-			 
-			 
-			 System.out.println("dddff:"+sd.get("NAME"));
-			
-		}
-		
-		return list;  
+	
+		return  (List<Map<String, Object>>)selectList("join.selectAll", map);  
 		
 	}
-
 	
+	@SuppressWarnings("unchecked")
+	public Map<String, Object> selectOne(Map<String,Object> map) {
+		// TODO Auto-generated method stub
+		return (Map<String, Object>) selectOne("join.selectOne", map);
+	}
+	
+	public void updateMember(Map<String, Object>map)throws Exception{
+		update("join.updateMember", map);
+	}
+	
+	public void deleteMember(Map<String, Object>map)throws Exception{
+		update("join.deleteMember", map);
+	}
+
 
 }

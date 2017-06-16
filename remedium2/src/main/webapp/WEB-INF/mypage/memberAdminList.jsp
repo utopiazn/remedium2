@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
 
 <%@ page import = "java.util.HashMap" %>
 <!DOCTYPE html>
@@ -42,8 +43,8 @@ color: black;
 </head>
 <body>
 
-ddd
-<%-- <div class="event">
+
+ <div class="event">
 	<table align="center" width="900" border="0" cellspacing="0" cellpadding="0">
 		<tr>
 			<td align="center"><h2>회원 리스트</h2>
@@ -68,69 +69,61 @@ ddd
 		<tr bgcolor="#777777">
 			<td height="1" colspan="7"></td>
 		</tr>
+	<c:choose>
+         <c:when test="${fn:length(list) > 0}">
+               <c:forEach items="${list }" var="list">
+					<tr bgcolor="#FFFFFF" align="center">
 		
-		
-	
-		<s:iterator value="list" status="stat">
-			<s:url id="viewURL" action="memberAdminView">
-				<s:param name="memberID">
-					<s:property value="memberID"/>
-				</s:param>
-				<s:param name="currentPage">
-					<s:property value="currentPage"/>
-				</s:param>
-			</s:url>
-			<s:if test="%{userAdmin == 1}">
+			<c:if test="${list.USERADMIN eq '1'}">
 			<tr bgcolor="#DCDCDC" align="center">
-			</s:if>
-			<s:else>
+			</c:if>
+			<c:if test="${list.USERADMIN eq '0'}">
 			<tr bgcolor="#FFFFFF" align="center">
-			</s:else>
-				<td><s:property value="regdate"/></td>
+			</c:if>
+				<td>${list.REGDATE }</td>
 				<td align="center"> 
-				<s:a href="%{viewURL}"><s:property value="memberID"/></s:a></td>
+				<a href="memberAdminView?memberId=${list.MEMBERID }" >${list.MEMBERID }</a></td>
 				<td align="center">
-				<s:a href="%{viewURL}"><s:property value="memberName"/></s:a></td>
-				<td align="center"><s:property value="birthday"/></td>
-				<td align="center"><s:property value="phone"/></td>
-				<td align="center"><s:property value="cash"/></td>
-				<s:if test="%{userAdmin == 1}">
+				<a href="memberAdminView?memberName=${list.MEMBERNAME }">${list.MEMBERNAME }</a></td>
+				<td align="center">${list.BIRTHDAY }</td>
+				<td align="center">${list.PHONE }</td>
+				<td align="center">${list.CASH }</td>
+				<c:if test="${list.USERADMIN eq '1'}">
 				<td align="center">관계자</td>
-				</s:if>
-				<s:else>
+				</c:if>
+				<c:if test="${list.USERADMIN eq '0'}">
 				<td align="center">고객</td>
-				</s:else>
+				</c:if>
 			</tr>
 			<tr bgcolor="#777777">
 				<td height="1" colspan="7"></td>
 			</tr>
-		</s:iterator>	
-		<s:if test="list.size() <= 0">
+		</c:forEach>
+		</c:when>
+		<c:otherwise>
 			<tr bgcolor="#FFFFFF" align="center">
 				<td colspan="7">등록된 게시글이 없습니다.</td>
 			</tr>
 			<tr bgcolor="#777777">
 				<td height="1" colspan="7"></td>
 			</tr> 
-		</s:if>
+		</c:otherwise>
+		</c:choose>
 		
-		<tr >
-			<td colspan="7" align="center"><s:property value="pagingHtml" escape="false"/></td>
-		</tr>
 		<tr>
 	</table>
 	
 	<center>
-	<form action="memberAdminList.action">
+	<form action="memberAdminList">
 		<select name="searchNum" class="h">
 			<option value="0">아이디</option>
 			<option value="1">이름</option>
 			<option value="2">핸드폰</option>
 		</select>
-		<s:textfield name="searchKey" theme="simple" value="" cssStyle="wdith:120px" maxlength="20"/>
+		<input type="text" name="searchKey" value="" Style="wdith:120px" maxlength="20"/>
 		<input class="button" name="submit" type="submit" value="검색" class="inputb">
 		</form>
 	</center>
-	</div> --%>
+	</div> 
 </body>
 </html>

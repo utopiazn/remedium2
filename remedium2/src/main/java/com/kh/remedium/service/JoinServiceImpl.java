@@ -35,10 +35,31 @@ public class JoinServiceImpl implements JoinService {
 	}
 
 	@Override
+	public void updateMember(Map<String, Object> map) throws Exception {
+		// TODO Auto-generated method stub
+		joinDAO.updateMember(map);
+	}
+	
+	
+
+	@Override
+	public void deleteMember(Map<String, Object> map) throws Exception {
+		// TODO Auto-generated method stub
+		joinDAO.deleteMember(map);
+	}
+
+	@Override
 	public List<Map<String, Object>> selectAll(Map<String, Object> map) throws Exception {
 		// TODO Auto-generated method stub
 		return joinDAO.selectAll(map);
 	}  
+	
+	@Override
+	public Map<String, Object> selectOne(Map<String, Object> map) throws Exception {
+	
+		return joinDAO.selectOne(map);
+	}
+
 	
 	
       

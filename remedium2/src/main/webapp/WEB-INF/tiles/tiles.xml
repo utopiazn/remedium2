@@ -124,6 +124,15 @@
 			<definition name="memberAdminList" extends="main2">
 				<put-attribute name="body" value="/WEB-INF/mypage/memberAdminList.jsp" />
 			</definition>
+		<!-- 마이페이지 관리자 - 회원 상세보기 --> 	
+			<definition name="memberAdminView" extends="main2">
+				<put-attribute name="body" value="/WEB-INF/mypage/memberAdminView.jsp" />
+			</definition>
+		<!-- 마이페이지 관리자 - 회원 상세수정--> 	
+			<definition name="memberAdminModify" extends="main2">
+				<put-attribute name="body" value="/WEB-INF/mypage/memberAdminModify.jsp" />
+			</definition>
+		
 		<!-- 마이페이지 관리자 - 객실예약리스트 --> 
 			<definition name="roomAdminList" extends="main2">
 				<put-attribute name="body" value="/WEB-INF/mypage/roomAdminList.jsp" />

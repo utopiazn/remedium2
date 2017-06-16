@@ -55,7 +55,7 @@
 <c:choose>
 <c:when test="${sessionScope.memberId != null}">
 <div id="menu" style="padding-left: 275px;">
-	<a href="info" style="color: white;">Remedium</a>
+	<a href="/remedium/info" style="color: white;">Remedium</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <!-- <a href="roomInfoView.action?room_class='1'">객실 소개   </a> -->
     <a href="/remedium/roomInfo/roomInfoView?roomClass=1" style="color: white;">Room</a>

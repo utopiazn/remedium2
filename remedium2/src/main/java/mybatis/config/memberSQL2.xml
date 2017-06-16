@@ -5,7 +5,21 @@
 <mapper namespace="join">
 
 
-
+	
+	<select id="selectAll" resultType="hashmap">
+		select MEMBERID,  MEMBERNAME, BIRTHDAY, PHONE, 	to_char(REGDATE) as REGDATE,  
+			USERADMIN,  CASH  
+		from
+			 member order by  USERADMIN asc
+	</select>
+	
+	<select id="selectOne" resultType="hashmap" parameterType="hashmap">
+		select MEMBERID, MEMBERPASSWORD, MEMBERNAME, GENDER, BIRTHDAY, PHONE, EMAIL, 
+				to_char(REGDATE) as REGDATE,  USERADMIN, ZIPCODE, ADDR1, ADDR2, CASH, USERCHECK 
+		from 
+			member where memberId = #{memberId}
+	</select>
+	
 	<insert id="insert" parameterType="hashmap">
 		<![CDATA[
 			
@@ -53,5 +67,30 @@
 	  	memberID = #{memberId}
 	  	]]>
 	</update>
+	
+	<update id="updateMember" parameterType="hashmap">
+		 <![CDATA[
+		 update member set
+		 
+		 	memberId =	#{memberId}, 
+			memberPassword = #{memberPassword}, 
+			memberName = #{memberName}, 
+			gender = #{gender}, 
+			birthday = #{birthday},
+			phone = #{phone}, 
+			email = #{email}, 
+			zipcode = #{zipcode}, 
+			addr1 = #{addr1}, 
+			addr2 = #{addr2}
+			
+		 where
+		 		memberId =	#{memberId}
+		
+		 ]]>
+	</update>
+	
+	<delete id="deleteMember" parameterType="hashmap">
+		delete from member where memberId = #{memberId}
+	</delete>
 
 </mapper>
