@@ -170,6 +170,17 @@
 		<put-attribute name="body" 		value="/WEB-INF/room/roomInfoView.jsp" />		
 	</definition>
 	
+	
+	
+	<!-- 객실 관련 -->
+	<definition name="roomAllList" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/room/roomList.jsp" />
+	</definition>
+	
+	<definition name="roomList" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/room/roomList.jsp" />
+	</definition>
+	
  <!-- main -->
 
 <!--

@@ -20,7 +20,7 @@
 </head>
 
 <body>
-
+ddddddd
 	<div class="top">
 	
 	<div id="navi">
@@ -83,7 +83,7 @@
 </div>
 </c:otherwise>
 </c:choose>
-<form action="roomList.action" method="post" enctype="multipart/formdata" onsubmit="return ReservationCH(this);">
+<form action="room/roomList" method="post" enctype="multipart/formdata" onsubmit="return ReservationCH(this);">
 <div id="res">
 <c:set var="cDate" value="<%=new ProjectUtil()%>"/> 
 <input type="hidden" name="curDate" value="${cDate.currentDate}">
@@ -95,7 +95,7 @@
 고객 수:
 <select name="people" class="h">
 <option value="9" <c:if test="${session.people==9}">selected="selected"</c:if> >인원수 무관</option>
-<option value="1" <c:if test="${session.people==1}">selected="selected"</c:if> >1명</option>
+<option value="1" <c:if test="${session.people==1}">sele cted="selected"</c:if> >1명</option>
 <option value="2" <c:if test="${session.people==2}">selected="selected"</c:if> >2명</option>
 <option value="3" <c:if test="${session.people==3}">selected="selected"</c:if> >3명</option>
 <option value="4" <c:if test="${session.people==4}">selected="selected"</c:if> >4명</option>
@@ -126,7 +126,7 @@ Room Class:
 
 <input type="submit" value="검색">
 <c:if test="${ session.userAdmin == '1' }"> <!-- 아이디가 관리자 아이디일 경우 -->
-<input type="button" value="전체" name="search" onclick="location.href='roomAllList.action'">
+<input type="button" value="전체" name="search" onclick="location.href='/remedium/room/roomAllList'">
 </c:if>
 
 
