@@ -15,7 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Controller
 public class UploadTest {
 	
-	String uploadPath = new ProjectUtil().getPath()+"/remedium2/src/main/webapp/resources/image";
+	String uploadPath = new ProjectUtil().getPath();
 	
 	@RequestMapping(value="/upload", method=RequestMethod.GET)
 	public String uploadForm(){
@@ -27,6 +27,7 @@ public class UploadTest {
 	public String uploadByMultipartFile(
 			@RequestParam("f") MultipartFile multipartFile,
 			@RequestParam("title") String title, Model model) throws IOException{
+		
 		
 		ProjectUtil.UplodeFile(uploadPath, multipartFile);
 		
