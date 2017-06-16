@@ -77,7 +77,7 @@
 			
 		<div id="navi2">
 			<h2>
-				 <a href="/remedium/room/roomInfoList?roomClass=0" >객실 소개  관리 </a>
+				 <a href="/remedium/roomInfo/roomInfoList?roomClass=0" >객실 소개  관리 </a>
 			</h2>
 		</div>
 	</c:when>
@@ -92,7 +92,7 @@
     
        	<div id="navi2">
 			<h2>
-				 <a href='roomInfoView.action?roomClass=${row.ROOM_CLASS }'>${row.NAME }</a>
+				 <a href='/remedium/roomInfo/roomInfoView?roomClass=${row.ROOM_CLASS }'>${row.NAME }</a>
 			</h2>
 		</div>
 	

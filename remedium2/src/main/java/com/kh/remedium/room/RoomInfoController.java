@@ -18,7 +18,7 @@ import com.kh.remedium.common.CommandMap;
 import com.kh.remedium.service.RoomInfoService;
 
 @Controller()
-@RequestMapping(value="/room")
+@RequestMapping(value="/roomInfo")
 public class RoomInfoController {
 	
 
@@ -86,8 +86,11 @@ public class RoomInfoController {
 	}
 		
 	public void lefterMenu(CommandMap commandMap) throws Exception{
-			
-		list.clear();		
+		
+		if(list != null){
+			list.clear();		
+			System.out.println("서부 메뉴 리스트 삭제함");
+		}
 		
 		list = roomInfoService.selectAll(commandMap.getMap());		
 		
@@ -100,6 +103,7 @@ public class RoomInfoController {
 	public ModelAndView roomInfoView3(CommandMap commandMap) throws Exception{
 
 		ModelAndView mav2 = new ModelAndView();
+		
 		
 		mav2.addObject("list",list);
 		
