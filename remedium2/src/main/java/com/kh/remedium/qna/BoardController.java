@@ -1,4 +1,4 @@
-package com.kh.remedium.board;
+package com.kh.remedium.qna;
 
 import java.util.List;
 import java.util.Map;
