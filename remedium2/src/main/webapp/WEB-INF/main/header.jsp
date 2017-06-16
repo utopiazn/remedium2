@@ -20,23 +20,23 @@
 </head>
 
 <body>
-ddddddd
+
 	<div class="top">
 	
 	<div id="navi">
 
 
 	<c:choose>
-	<c:when test="${memberId != null}"> <!-- 아이디가 null이 아닌 경우 -->
+	<c:when test="${sessionScope.memberId != null}"> <!-- 아이디가 null이 아닌 경우 -->
 	
 	<a href="/remedium/myPageMain" style="color: white;">마이페이지</a>
 	&nbsp;
 	<a href="/remedium/logout" style="color: white;">로그아웃</a>
 	&nbsp;
 	<br/>
-	${memberName} 로그인 하셨습니다.
+	${sessionScope.memberName} 로그인 하셨습니다.
 	<br/>
-	Cash point: ${cash}
+	Cash point: ${sessionScope.cash}
 	</c:when>
 	<c:otherwise>
 	<a href="/remedium/joinForm" style="color: white;">회원가입</a>
@@ -53,7 +53,7 @@ ddddddd
 
 </div>
 <c:choose>
-<c:when test="${session.memberId != null}">
+<c:when test="${sessionScope.memberId != null}">
 <div id="menu" style="padding-left: 275px;">
 	<a href="info" style="color: white;">Remedium</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -87,23 +87,23 @@ ddddddd
 <c:set var="cDate" value="<%=new ProjectUtil()%>"/> 
 <input type="hidden" name="curDate" value="${cDate.currentDate}">
 체크인:
-<input type="date" name="firstDate" value="${session.firstDate}">
+<input type="date" name="firstDate" value="${sessionScope.firstDate}">
 ~
-<input type="date" name="lastDate" value="${session.lastDate}">
+<input type="date" name="lastDate" value="${sessionScope.lastDate}">
 
 고객 수:
 <select name="people" class="h">
-<option value="9" <c:if test="${session.people==9}">selected="selected"</c:if> >인원수 무관</option>
-<option value="1" <c:if test="${session.people==1}">sele cted="selected"</c:if> >1명</option>
-<option value="2" <c:if test="${session.people==2}">selected="selected"</c:if> >2명</option>
-<option value="3" <c:if test="${session.people==3}">selected="selected"</c:if> >3명</option>
-<option value="4" <c:if test="${session.people==4}">selected="selected"</c:if> >4명</option>
-<option value="0" <c:if test="${session.people==0}">selected="selected"</c:if> >단체(5인 이상)</option>
+<option value="9" <c:if test="${sessionScope.people==9}">selected="selected"</c:if> >인원수 무관</option>
+<option value="1" <c:if test="${sessionScope.people==1}">sele cted="selected"</c:if> >1명</option>
+<option value="2" <c:if test="${sessionScope.people==2}">selected="selected"</c:if> >2명</option>
+<option value="3" <c:if test="${sessionScope.people==3}">selected="selected"</c:if> >3명</option>
+<option value="4" <c:if test="${sessionScope.people==4}">selected="selected"</c:if> >4명</option>
+<option value="0" <c:if test="${sessionScope.people==0}">selected="selected"</c:if> >단체(5인 이상)</option>
 </select>
 
 Room Class:
 <select name="rcType" class="h">
-<option value="0" <c:if test="${session.rcType==0 && session.rcType==null}">selected="selected"</c:if>>전체</option>
+<option value="0" <c:if test="${sessionScope.rcType==0 && sessionScope.rcType==null}">selected="selected"</c:if>>전체</option>
 
 <!-- 이건 룸클래스 필요해서 주석함 -->
 
@@ -124,7 +124,7 @@ Room Class:
 
 
 <input type="submit" value="검색">
-<c:if test="${ session.userAdmin == '1' }"> <!-- 아이디가 관리자 아이디일 경우 -->
+<c:if test="${ sessionScope.userAdmin == '1' }"> <!-- 아이디가 관리자 아이디일 경우 -->
 <input type="button" value="전체" name="search" onclick="location.href='/remedium/room/roomAllList'">
 </c:if>
 

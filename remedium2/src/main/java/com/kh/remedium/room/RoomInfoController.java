@@ -55,25 +55,23 @@ public class RoomInfoController {
 	public ModelAndView roomInfoView(CommandMap commandMap,@ModelAttribute("roomClass") int roomClass) throws Exception{
 
 		ModelAndView mav = new ModelAndView();
-
-		System.out.println("롬정보 패이지로 이동");
 		
-		commandMap.toString();
-
-
+		System.out.println("롬정보 패이지로 이동");	
 		
-		
+		commandMap.toString();		
 		
 		//왼쪽 메뉴 로드
-		lefterMenu(commandMap);
-		
+		lefterMenu(commandMap);		
 		
 		 Map<String, Object> subList = list.get(roomClass);
 		 System.out.println(roomClass);
 		 
 		 
 		 //subList.put(key, value)
-			
+		 
+		//	mav.addObject("userAdmin",0);
+		
+		 
 		mav.addObject("list",list);
 		
 		
@@ -85,7 +83,7 @@ public class RoomInfoController {
 		return mav;
 	}
 		
-	public void lefterMenu(CommandMap commandMap) throws Exception{
+	public void lefterMenu(CommandMap commandMap ) throws Exception{
 		
 		if(list != null){
 			list.clear();		
@@ -98,6 +96,8 @@ public class RoomInfoController {
 	
 	
 	
+	
+	
 
 	@RequestMapping(value="/roomInfoView3")
 	public ModelAndView roomInfoView3(CommandMap commandMap) throws Exception{
@@ -106,6 +106,8 @@ public class RoomInfoController {
 		
 		
 		mav2.addObject("list",list);
+		
+		
 		
 		
 		mav2.setViewName("roomInfoView");
