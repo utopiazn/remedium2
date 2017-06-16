@@ -69,7 +69,7 @@ public class RoomInfoController {
 		 
 		 //subList.put(key, value)
 		 
-		//	mav.addObject("userAdmin",0);
+			mav.addObject("userAdmin",0);
 		
 		 
 		mav.addObject("list",list);

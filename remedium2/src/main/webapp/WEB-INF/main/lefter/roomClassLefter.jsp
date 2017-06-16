@@ -73,7 +73,7 @@
 		객실 클래스 정보가 없습니다		
 	</c:when>
 	
-	<c:when test="${userAdmin eq  '1' }"> <!-- 아이디가 null이 아닌 경우 -->
+	<c:when test="${sessionScope.userAdmin eq  '1' }"> <!-- 아이디가 null이 아닌 경우 -->
 			
 		<div id="navi2">
 			<h2>
