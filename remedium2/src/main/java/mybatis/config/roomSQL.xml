@@ -58,7 +58,7 @@
 		   WHERE 
 		    FIRSTDATE between #{firstDate} and #{lastDate} or 
 		    LASTDATE between #{firstDate} and #{lastDate}
-		  ) AND a.ROOM_CAPACITY >= #{people} AND a.ROOM_CLASS = #rcType# 
+		  ) AND a.ROOM_CAPACITY >= #{people} AND a.ROOM_CLASS = #{rcType} 
 		  ORDER BY a.ROOM_CLASS ASC, a.NO ASC
 		  ]]>
 	</select>

@@ -42,9 +42,13 @@ public class RoomController {
 	public ModelAndView roomList(CommandMap commandMap) throws Exception{
 
 		ModelAndView mav = new ModelAndView();
-
+		
+		System.out.println("commandMap:"+commandMap.getMap());
+		
 		list = roomService.selectList(commandMap.getMap());
 		 
+		System.out.println("list 첫번째 정보:"+list.get(0));
+		
 		mav.addObject("list",list);
 		
 		

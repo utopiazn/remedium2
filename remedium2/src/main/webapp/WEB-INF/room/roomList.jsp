@@ -75,7 +75,7 @@ color: black;
 		
 		
 	<c:choose>
-		<c:when test="${list.size() <= 0}">
+		<c:when test="${list==null}">
 			<tr>
 				<td colspan="6" align="center">예약가능한 객실이 없습니다</td>
 			</tr>
@@ -84,12 +84,12 @@ color: black;
 			</tr>
 		</c:when>
 		<c:otherwise>
-			<c:forEach var="room" items="list">
+			<c:forEach var="room" items="${list}">
 				<tr>
-					<td align="center"><a href="/remedium/roomView.action?num=<s:property value="no"/>&firstDate=<s:property value="firstDate"/>&lastDate=<s:property value="lastDate"/>&people=<s:property value="people"/>">${room.NO}호</a></td>
-					<td align="center"><a href="/remedium/roomView.action?num=<s:property value="no"/>&firstDate=<s:property value="firstDate"/>&lastDate=<s:property value="lastDate"/>&people=<s:property value="people"/>">${room.NAME}</a></td>
-					<td align="center"><a href="/remedium/roomView.action?num=<s:property value="no"/>&firstDate=<s:property value="firstDate"/>&lastDate=<s:property value="lastDate"/>&people=<s:property value="people"/>">${room.CLASS_NAME}</a></td>
-					<td align="left"><a href="/remedium/roomView.action?num=<s:property value="no"/>&firstDate=<s:property value="firstDate"/>&lastDate=<s:property value="lastDate"/>&people=<s:property value="people"/>">${room.CONSTRUCTION}</a></td>
+					<td align="center"><a href="*">${room.NO}호</a></td>
+					<td align="center"><a href="*">${room.NAME}</a></td>
+					<td align="center"><a href="*">${room.CLASS_NAME}</a></td>
+					<td align="left"><a href="*">${room.CONSTRUCTION}</a></td>
 					<td align="center">
 					
 					<c:choose>

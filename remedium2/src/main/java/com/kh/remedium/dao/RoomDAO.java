@@ -14,23 +14,23 @@ public class RoomDAO extends AbstractDAO{
 		
 		List<Map<String, Object>> list;
 		
-		if((Integer)map.get("people")==9){
-			if((Integer)map.get("rcType")==0){
+		if(map.get("people").equals("9")){
+			if(map.get("rcType").equals("0")){
 				list= (List<Map<String, Object>>)selectList("roomSQL.select_PeopleNoTypeNo", map);
 			}else{
 				list= (List<Map<String, Object>>)selectList("roomSQL.select_typeC", map);
 			}
 		}else{
-			if((Integer)map.get("rcType")==0){
+			if(map.get("rcType").equals("0")){
 			
-				if((Integer)map.get("people")==0){
+				if(map.get("people").equals("0")){
 					list= (List<Map<String, Object>>)selectList("roomSQL.selectSerchGroup", map);
 				}else{
 					list= (List<Map<String, Object>>)selectList("roomSQL.selectSerch", map);
 				}
 			
 			}else{
-				if((Integer)map.get("people")==0){
+				if(map.get("people").equals("0")){
 					list= (List<Map<String, Object>>)selectList("roomSQL.selectSerchGroup_typeC", map);
 				}else{
 					list= (List<Map<String, Object>>)selectList("roomSQL.selectSerch_typeC", map);
