@@ -1,11 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
-<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <?xml version="1.0" encoding="UTF-8" ?>
 <html lang="ko"  xmlns="http://www.w3.org/1999/xhtml" >
-
 	<script type="text/javascript">
 	  
 	function button_event(url){
@@ -21,11 +19,7 @@
 		}
 		
 	}
-	
-
 	</script>
-	
-	
 <head>
 <style type="text/css">
 a{
@@ -105,10 +99,10 @@ text-align: center;
 		</table><br/>
 		
 		<center>
-		<input name="list" id="view" type="button" value="목록" class="button" onClick="javascript:location.href='boardList'">
+		<input name="list" type="button" value="목록" class="button" onClick="javascript:location.href='boardList'">
 		<c:if test="${board.NAME eq memberName || userAdmin eq '1'}">
     	&nbsp;<input type="button" value="수정" class="button" onClick="javascript:location.href='boardModify?no=${board.NO }'"> 
-		&nbsp;<input type="button"  value="삭제" class="button" onClick="javascript:button_event('boardDelete?no=${board.NO }&ref=${board.REF }&re_step=${board.RE_STEP }')">
+		&nbsp;<input type="button" value="삭제" class="button" onClick="javascript:button_event('boardDelete?no=${board.NO }&ref=${board.REF }&re_step=${board.RE_STEP }')">
 		</c:if>
 		<c:if test="${userAdmin eq '1' }">
 		&nbsp;<input type="button" value="답변" class="button" onClick="javascript:location.href='boardReply?no=${board.NO }'"> 

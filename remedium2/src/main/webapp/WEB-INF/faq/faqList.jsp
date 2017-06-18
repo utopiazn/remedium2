@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>FAQ</title>
 <link href="css/board.css" rel="stylesheet" style="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <style type="text/css">
 a{
 color: black;
@@ -35,12 +36,26 @@ text-align: center;
 	background-color:#202f58;
 	color: white;
 }
-
-
+.contents{
+display: none;
+}
 </style>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#list").on("click", ".title", function(){
+			
+			var i =$(this).attr("name"); 
+			$(".contents").hide();
+			$("#"+i).show();
+		});
+	    $(".title").mouseover(function(){
+	    	$(this).css("cursor","pointer");
+	    });
+	});
+</script>
 </head>
 <body>
-<div class="event">
+<div class="event" id="list">
 <table width="1000" border="0" cellspacing="0" cellpadding="2" align="center">
   		<tr>
   		
@@ -74,12 +89,18 @@ text-align: center;
 				<td align="left"> 
 				 <tr bgcolor="#FFFFFF"  align="center">
         		<td style="border-bottom: 1px solid #666;">${faq.TYPE }</td>
-        		<td style="border-bottom: 1px solid #666;" align="left"> &nbsp;<a href="faqView?faqId=${faq.FAQID }" >Q. ${faq.SUBJECT }</a></td>
+        		<td name="${faq.FAQID }" class="title" style="border-bottom: 1px solid #666;" align="left"> &nbsp;Q. ${faq.SUBJECT }</td>
       	      </tr>
 		
 	      <tr bgcolor="#777777">
       		<td height="1" colspan="5"></td>
     	  </tr>
+    	  <tr>
+    	  		<td align="left" id="${faq.FAQID }" class="contents" colspan="5">A. ${faq.CONTENT }</td>
+    	  </tr>
+    	  <tr bgcolor="#777777">
+				<td height="1" colspan="5"></td>
+			</tr>
     	  </c:forEach>
 		</c:when>	
     		<c:otherwise>

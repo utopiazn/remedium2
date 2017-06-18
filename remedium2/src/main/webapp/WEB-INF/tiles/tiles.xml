@@ -15,12 +15,17 @@
 		<put-attribute name="body" 		value="/WEB-INF/room/roomInfoView.jsp" />		
 		<put-attribute name="footer" 	value="/WEB-INF/main/footer.jsp" />			
 	</definition>
-
+ 
 	<definition name="main2" template="/WEB-INF/main/main2.jsp">
 		<put-attribute name="title" value="Remedium Hotel[당신만을 위한 오리엔탈 프리미엄 에디션]" />						
 		<put-attribute name="header" value="/WEB-INF/main/header.jsp" />		
 		<put-attribute name="body" value="/WEB-INF/main/body.jsp" /> 
 		<put-attribute name="footer" value="/WEB-INF/main/footer.jsp" />	
+	</definition> 
+	
+	<definition name="main6" template="/WEB-INF/main/main5.jsp">	
+		<put-attribute name="title" value="Remedium Hotel[당신만을 위한 오리엔탈 프리미엄 에디션]" />	
+		<put-attribute name="body" value="/WEB-INF/main/body.jsp" /> 
 		
 	</definition>
 
@@ -31,6 +36,9 @@
 		<put-attribute name="footer" value="/WEB-INF/main/footer.jsp" />	
 		
 	</definition>
+	
+	
+	
 	
 	
 	
@@ -148,10 +156,16 @@
 	</definition>	
 	
 	<!-- 문의사항 상세보기 -->
-	<definition name="boardView" extends="main5">
+	<!--   <definition name="boardView" extends="main5">
 		<put-attribute name="lefter" value="/WEB-INF/main/lefter/boardLefter.jsp" />	
 		<put-attribute name="body" value="/WEB-INF/board/boardView.jsp" />		
-	</definition>	
+	</definition>  -->
+	
+ 	<definition name="boardView" extends="main6">
+		<put-attribute name="body" value="/WEB-INF/board/boardView.jsp" />		
+	</definition> 
+	
+	
 	
 		<!-- 문의사항 상세보기 -->
 	<definition name="boardWriteForm" extends="main5">

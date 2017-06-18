@@ -6,7 +6,37 @@
 <head>
 <meta charset="UTF-8">
 <title>QnA</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+     $("#list").on("click", ".title", function(){ // #list = <div 태그 안에 id> .title은  내가 누를 부분의 클래스 이름
+    	$.ajax({url: "boardView",  // 내가 넘겨줄 URL
+    		type : "POST", // 넘겨줄 방식
+    		data : { // 넘겨줄 데이터 (값)
+    			no : $(this).attr("name") // name 안에 ${board.NO} 가 들어가있어 글번호에 해당됨.
+    		},
+    		success: function(result){ // 정상적으로 처리 될경우 
+            	$("#list").html(result); // 가져온 jsp 를 넣어줄 영역을 표시 <div id="list"> 가져온 jsp <div>
+    		},error: function(result){ // 실패 할경우
+    			alert("실패"); // 실패 alert문구 발생
+    		}
+    		
+        });
+    }); 
+/*     $("#list").on("click", ".title", function(){
+    	var i = $(this).attr("name"); // "name" = 글번호 임과 동시에 contents 의 아이디 명
+    	$(".contents").hide();
+    	$("#"+i).show();
+    }); */
+    $(".title").mouseover(function(){
+    	$(this).css("cursor","pointer");
+    });
+});
+</script>
 <style type="text/css">
+.contents{
+display: none;
+}
 a{
 color: black;
 }
@@ -37,10 +67,11 @@ text-align: center;
 .h{
 height: 22px;
 }
+
 </style>
 </head>
 <body>
-<div class="event">
+<div class="event" id="list">
 <table width="1000" border="0" cellspacing="0" cellpadding="0" align="center">
   		<tr>
   			<td align="center" ><h2>QnA</h2>
@@ -71,14 +102,25 @@ height: 22px;
 					<tr bgcolor="#FFFFFF" align="center">
 					<td>${board.NO}	</td>
 					
-			
-				<td align="left"> 
+				
+				<%-- <td align="left"> 
 				<c:if test="${board.RE_STEP != 0} ">
 					<c:forEach var = "i" begin = "${board.RE_STEP}" end = "0">&nbsp;</c:forEach>→
-				</c:if>	
-				 <a href="boardView?no=${board.NO }&ref=${board.REF}" >${board.SUBJECT }</a>  </td>
+				</c:if>	 --%>
+				<%--  <a href="boardView?no=${board.NO }&ref=${board.REF}" >${board.SUBJECT }</a>  </td> 
+				
 				<td align="center">
-				<a href="boardView?no=${board.NO }&ref=${board.REF}">${board.NAME }</a></td>
+				<a href="boardView?no=${board.NO }&ref=${board.REF}">${board.NAME }</a></td>--%>
+				<td align="left" name="${board.NO}" class="title"> 
+					<c:if test="${board.RE_STEP != 0} ">
+						<c:forEach var = "i" begin = "${board.RE_STEP}" end = "0">&nbsp;</c:forEach>→
+					</c:if>	
+					${board.SUBJECT}
+				</td> 
+				
+				<td align="center">
+					${board.NAME }
+				</td>
 				<td align="center">${board.REGDATE }</td>
 				<td align="center"><%-- <s:property value="type"/> --%>
 					<c:choose>
@@ -90,6 +132,12 @@ height: 22px;
 						</c:otherwise>
 					</c:choose>				
 				</td>
+			</tr>
+			<tr bgcolor="#777777">
+				<td height="1" colspan="7"></td>
+			</tr>
+			<tr>
+				<td id="${board.NO}" class="contents" colspan="7">${board.CONTENT}</td>
 			</tr>
 			<tr bgcolor="#777777">
 				<td height="1" colspan="7"></td>
@@ -115,17 +163,17 @@ height: 22px;
 		</tr>
 		
 	</table>
-	</div>
 	<table align="center">
-	<form action="boardList" class="bottom" method="post">
-		<select name="searchNum" class="h">
-			<option value="0">제 목</option>
-			<option value="1">작성자</option>
-		</select>&nbsp;
-		<input type="text" name="searchKey" value="" Style="wdith:120px" maxlength="20"/>&nbsp;
-		<input class="button" name="submit" type="submit" value="검색" class="inputb">
-	</form>
+		<form action="boardList" class="bottom" method="post">
+			<select name="searchNum" class="h">
+				<option value="0">제 목</option>
+				<option value="1">작성자</option>
+			</select>&nbsp;
+			<input type="text" name="searchKey" value="" Style="wdith:120px" maxlength="20"/>&nbsp;
+			<input class="button" name="submit" type="submit" value="검색" class="inputb">
+		</form>
 	</table>
+	</div>
 	
 </body>
 </html>
