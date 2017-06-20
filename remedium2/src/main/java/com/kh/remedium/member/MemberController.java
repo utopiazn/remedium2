@@ -81,12 +81,13 @@ public class MemberController {
 	public ModelAndView joinAddForm(CommandMap commandMap) throws Exception{
 		
 		System.out.println("회원처리폼");
+		System.out.println("commandMap:"+commandMap.getMap());
 
 		
 		
-		commandMap.toString();
-		System.out.println(commandMap.isEmpty());
-		System.out.println("회원처리폼22222222222222");
+//		commandMap.toString();
+//		System.out.println(commandMap.isEmpty());
+//		System.out.println("회원처리폼22222222222222");
 
 		joinService.insert(commandMap.getMap());
 
