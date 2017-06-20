@@ -19,15 +19,9 @@ $(document).ready(function(){
             	$("#list").html(result); // 가져온 jsp 를 넣어줄 영역을 표시 <div id="list"> 가져온 jsp <div>
     		},error: function(result){ // 실패 할경우
     			alert("실패"); // 실패 alert문구 발생
-    		}
-    		
+    		}   		
         });
     }); 
-/*     $("#list").on("click", ".title", function(){
-    	var i = $(this).attr("name"); // "name" = 글번호 임과 동시에 contents 의 아이디 명
-    	$(".contents").hide();
-    	$("#"+i).show();
-    }); */
     $(".title").mouseover(function(){
     	$(this).css("cursor","pointer");
     });
@@ -71,6 +65,7 @@ height: 22px;
 </style>
 </head>
 <body>
+
 <div class="event" id="list">
 <table width="1000" border="0" cellspacing="0" cellpadding="0" align="center">
   		<tr>
@@ -118,7 +113,7 @@ height: 22px;
 					${board.SUBJECT}
 				</td> 
 				
-				<td align="center">
+				<td align="center" name="${board.NO}" class="title">
 					${board.NAME }
 				</td>
 				<td align="center">${board.REGDATE }</td>
@@ -162,6 +157,7 @@ height: 22px;
 			</td>
 		</tr>
 		
+	
 	</table>
 	<table align="center">
 		<form action="boardList" class="bottom" method="post">

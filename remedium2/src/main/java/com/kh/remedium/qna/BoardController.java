@@ -43,11 +43,13 @@ public class BoardController {
 	ModelAndView mav = new ModelAndView();
 	
 	@RequestMapping(value="/boardList")
-	public ModelAndView boardList(CommandMap commandMap) throws Exception {
+	public ModelAndView boardList(CommandMap commandMap, HttpSession session) throws Exception {
 
-		List<Map<String,Object>> list = boardService.selectAll(commandMap.getMap());
 		
+		List<Map<String,Object>> list = boardService.selectAll(commandMap.getMap());
+		 
 		mav.addObject("list", list);
+		
 		mav.setViewName("boardList");
 		return mav;
 	}
@@ -102,11 +104,12 @@ public class BoardController {
 		Map<String,Object> map = boardService.selectOne(commandMap.getMap());
 		
 		mav.addObject("board", map);
-		mav.setViewName("boardView");
+		mav.setViewName("/board/boardView");
 		
 		return mav;
 		
 	}
+	
 	
 	@RequestMapping(value="/boardDelete")
 	public ModelAndView boardDelete(CommandMap commandMap, int re_step) throws Exception {
@@ -163,6 +166,34 @@ public class BoardController {
 		return mav;
 		
 	}
+	@RequestMapping(value="/test1")
+	public ModelAndView test() throws Exception {
+		ModelAndView mav = new ModelAndView();
+		
+	
+		
+		
+		
+		mav.setViewName("/test/NewFile1");
+		
+		return mav;
+		
+	}
+	
+	@RequestMapping(value="/test")
+	public ModelAndView test(int no) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		
+	
+		
+		mav.addObject("test", no);
+		
+		mav.setViewName("/test/NewFile");
+		
+		return mav;
+		
+	}
+	
 	
 	
 	

@@ -17,7 +17,7 @@ public class MemberService implements MemberDao{
 		
 		return this.sqlSessionTemplate.selectOne("member.login",member);
 	}
-
+	
 	@Override
 	public MemberModel selectOne(String memberId) {
 		// TODO Auto-generated method stub
