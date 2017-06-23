@@ -35,7 +35,10 @@
 	
 	
 	
-	
+	<!-- 테스트 -->
+	<definition name="test" extends="main2">
+		<put-attribute name="body" value="/WEB-INF/test.jsp" />
+	</definition>
 	
 	
 	<!-- 로그인 폼 -->

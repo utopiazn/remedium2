@@ -31,5 +31,6 @@
 	     <mapper resource="mybatis/config/eventSQL.xml" />
 	     <mapper resource="mybatis/config/roomSQL.xml" />
 	      <mapper resource="mybatis/config/faqSQL.xml" />
+	         <mapper resource="mybatis/config/testSQL.xml" />
 	</mappers> 
 </configuration> 
