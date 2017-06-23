@@ -79,6 +79,8 @@
     <a href="/remedium/event/eventList" style="color: white;">Event</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="/remedium/board/boardList" style="color: white;">QnA</a>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/remedium/board/boardList" style="color: white;">QnA</a>
 </div>
 </c:otherwise>
 </c:choose>

@@ -66,6 +66,8 @@
 <!-- <body style="background-color: black;" > -->
 <body>
 
+
+
 <c:choose>
 
 	<c:when test="${list == null}"> 

@@ -43,6 +43,7 @@ public class RoomController {
 
 		ModelAndView mav = new ModelAndView();
 		
+	/*	
 		System.out.println("commandMap:"+commandMap.getMap());
 		
 		list = roomService.selectList(commandMap.getMap());
@@ -50,13 +51,19 @@ public class RoomController {
 		System.out.println("list 첫번째 정보:"+list.get(0));
 		
 		mav.addObject("list",list);
-		
+	*/
 		
 		
 		mav.setViewName("roomList");
 		
 		return mav;
 	}
+	
+	
+	
+	
+	
+	
 	
 	@RequestMapping(value="/roomAllList")
 	public ModelAndView roomListAdmin() throws Exception{
